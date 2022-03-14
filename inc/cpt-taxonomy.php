@@ -31,8 +31,8 @@
             'hierarchical'       => false,
             'menu_position'      => 7,
             'menu_icon'          => 'dashicons-admin-tools',
-            'supports'           => array( 'title', 'editor', 'thumbnail'),
-            'template'           => array( array( 'core/quote' ) ),
+            'supports'           => array( 'title', 'thumbnail'),
+            'template'           => array(),
             'template_lock'      => 'all'
         );
 

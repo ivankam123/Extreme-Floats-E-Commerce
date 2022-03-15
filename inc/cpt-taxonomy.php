@@ -69,7 +69,7 @@
             'hierarchical'       => false,
             'menu_position'      => 7,
             'menu_icon'          => 'dashicons-heart',
-            'supports'           => array( 'editor' ),
+            'supports'           => array( 'title', 'editor' ),
             'template'           => array( array( 'core/quote' ) ),
             'template_lock'      => 'all'
         );

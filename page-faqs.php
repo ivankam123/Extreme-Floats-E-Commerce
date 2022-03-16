@@ -23,31 +23,19 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'page' );
 
+if( have_rows('faqs') ): 
+    while ( have_rows('faqs') ) : the_row();
+        $sub_question = get_sub_field('question');
+		$sub_answer = get_sub_field('answer');
+        echo '<p>' .$sub_question.'</p>';
+		echo '<p>' .$sub_answer.'</p>';
+endwhile;
+endif;
+
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
-
-			if ( function_exists('get_field') ) {
-
-			if( get_field('address') ) {
-				echo '<p>';
-				the_field('address');
-				echo '</p>';
-			}
-		
-			if( get_field('email') ) {
-				echo '<p>';
-				the_field('email');
-				echo '</p>';
-				}
-
-			if( get_field('phone_number') ) {
-				echo '<p>';
-				the_field('phone_number');
-				echo '</p>';
-				}
-		}
 
 		endwhile; // End of the loop.
 		?>

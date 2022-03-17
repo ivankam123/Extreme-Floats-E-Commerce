@@ -59,6 +59,7 @@ get_header();
 						<div class="single-tour-container">
 							<h3><?php the_title(); ?></h3>
 							<?php the_content(); ?>
+							<?php the_post_thumbnail(); ?>
 							<a href="<?php the_permalink(); ?>">See More</a>
 						</div>
 					<?php

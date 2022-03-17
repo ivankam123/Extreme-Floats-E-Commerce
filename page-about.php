@@ -20,10 +20,11 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-			get_template_part( 'template-parts/content', 'page' );
+
 			?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<section>
 				<header class="entry-header">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				</header><!-- .entry-header -->
@@ -42,10 +43,9 @@ get_header();
                         } 
 				?>
 				</div>
-			</article>
+					</section>
 
-
-
+			<section>
 			<?php
 			$args = array(
 				'post_type'      => 'ef-staffs',
@@ -67,6 +67,10 @@ get_header();
 				}
 				wp_reset_postdata();
 			} 
+			?>
+			<section>
+			</article>
+	<?php
 
 		endwhile; // End of the loop.
 		?>

@@ -231,47 +231,62 @@ function exf_acfs_function() {
 				 if ( function_exists ( 'get_field' ) ) {
 
 					if ( get_field( 'google_map' ) ) {
+						echo'<h2>Directions</h2>';
 						echo "<p>";
 						the_field( 'google_map' );
 						echo "</p>";
 					}
 					if ( get_field( 'tour_length' ) ) {
+					echo'<h3>Tour Length</h3>';
 						echo "<p>";
 						the_field( 'tour_length' );
 						echo "</p>";
 					}
 					if ( get_field( 'minimum_age' ) ) {
+						echo'<h3>Minimum Age</h3>';
 						echo "<p>";
 						the_field( 'minimum_age' );
 						echo "</p>";
 					}
 
 					if ( get_field( 'minimum_weight' ) ) {
+						echo'<h3>Minimum Weight</h3>';
 						echo "<p>";
 						the_field( 'minimum_weight' );
 						echo "</p>";
 					}
 
 					if ( get_field( 'departure_time' ) ) {
+						echo'<h3>Departure Time</h3>';
 						echo "<p>";
 						the_field( 'departure_time' );
 						echo "</p>";
 					}
 
 				}
-					if( have_rows('what_to_bring') ): 
+				echo'<div>';
+					if( have_rows('what_to_bring') ) {
+						echo'<h3>What To Bring</h3>';
+					echo '<ul>';
 					while ( have_rows('what_to_bring') ) : the_row();
-					echo the_sub_field('item');
+					echo '<li>' .the_sub_field('what-to-bring').'</li>';
 
 				endwhile;
-				endif;
+				echo '</ul>';
 
-					if( have_rows('what_is_included') ): 
-					while ( have_rows('what_is_included') ) : the_row();
-					echo the_sub_field('item');
+			}
 
-					endwhile;
-					endif;
+					if( have_rows('whats_included') ) {
+						echo'<h3>Whats Included</h3>';
+					echo '<ul>';
+					while ( have_rows('whats_included') ) : the_row();
+					echo '<li>' .the_sub_field('whats_included').'</li>';
+
+				endwhile;
+				echo '</ul>';
+
+			}
+			echo'</div>';
 			}
 
 

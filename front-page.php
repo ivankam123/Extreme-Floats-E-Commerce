@@ -21,7 +21,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 		?>
-			<div class="hero-container">
+			<section class="hero-container">
 				<?php the_post_thumbnail(); 
 			
 				 if ( function_exists ( 'get_field' ) ) {
@@ -42,7 +42,7 @@ get_header();
 					}
 				}
 				?>
-			</div>
+			</section>
 			
 			<section class="products-container" id="products-container">
 				<h2>Tours</h2>
@@ -71,32 +71,28 @@ get_header();
 				endif; ?>
 			</section>
 
-			<section class="two-columns">
-				<div class=" what-to-bring-container">
-					<h3>What To Bring</h3>
+			<div class="two-columns">
+				<section class=" what-to-bring-container">
+					<h2>What To Bring</h2>
 					<?php if( have_rows('what-to-bring') ): ?>
 						<ul>
 						<?php while ( have_rows('what-to-bring') ) : the_row(); ?>
 							<li><?php the_sub_field('item'); ?></li>
 						<?php endwhile; ?>
 						</ul>
-					<?php else : ?>
-						<p>No todos found.</p>
 					<?php endif; ?>
-				</div>
-				<div class="whats-included-container">
-					<h3>What's Included</h3>
+				</section>
+				<section class="whats-included-container">
+					<h2>What's Included</h2>
 					<?php if( have_rows('what-is-included') ): ?>
 						<ul>
 						<?php while ( have_rows('what-is-included') ) : the_row(); ?>
 							<li><?php the_sub_field('item'); ?></li>
 						<?php endwhile; ?>
 						</ul>
-					<?php else : ?>
-						<p>No todos found.</p>
 					<?php endif; ?>
-				</div>
-			</section>
+				</section>
+			</div>
 
 			<?php 
 			 $args = array(

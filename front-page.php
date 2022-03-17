@@ -56,12 +56,12 @@ get_header();
 					while ($wc_query->have_posts()) :
 						$wc_query->the_post();
 						?>
-						<div class="single-tour-container">
+						<article class="single-tour-container">
 							<h3><?php the_title(); ?></h3>
 							<?php the_content(); ?>
 							<?php the_post_thumbnail(); ?>
 							<a href="<?php the_permalink(); ?>">See More</a>
-						</div>
+						</article>
 					<?php
 					endwhile;
 						wp_reset_postdata();
@@ -71,8 +71,8 @@ get_header();
 				endif; ?>
 			</section>
 
-			<section class="two-columns">
-				<div class=" what-to-bring-container">
+			<div class="two-columns">
+				<section class=" what-to-bring-container">
 					<h3>What To Bring</h3>
 					<?php if( have_rows('what-to-bring') ): ?>
 						<ul>
@@ -83,8 +83,8 @@ get_header();
 					<?php else : ?>
 						<p>No todos found.</p>
 					<?php endif; ?>
-				</div>
-				<div class="whats-included-container">
+				</section>
+				<section class="whats-included-container">
 					<h3>What's Included</h3>
 					<?php if( have_rows('what-is-included') ): ?>
 						<ul>
@@ -95,8 +95,8 @@ get_header();
 					<?php else : ?>
 						<p>No todos found.</p>
 					<?php endif; ?>
-				</div>
-			</section>
+				</section>
+			</div>
 
 			<?php 
 			 $args = array(

@@ -225,3 +225,55 @@ if ( ! function_exists( 'extreme_floats_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+function exf_acfs_function() {
+	
+				 if ( function_exists ( 'get_field' ) ) {
+
+					if ( get_field( 'google_map' ) ) {
+						echo "<p>";
+						the_field( 'google_map' );
+						echo "</p>";
+					}
+					if ( get_field( 'tour_length' ) ) {
+						echo "<p>";
+						the_field( 'tour_length' );
+						echo "</p>";
+					}
+					if ( get_field( 'minimum_age' ) ) {
+						echo "<p>";
+						the_field( 'minimum_age' );
+						echo "</p>";
+					}
+
+					if ( get_field( 'minimum_weight' ) ) {
+						echo "<p>";
+						the_field( 'minimum_weight' );
+						echo "</p>";
+					}
+
+					if ( get_field( 'departure_time' ) ) {
+						echo "<p>";
+						the_field( 'departure_time' );
+						echo "</p>";
+					}
+
+				}
+					if( have_rows('what_to_bring') ): 
+					while ( have_rows('what_to_bring') ) : the_row();
+					echo the_sub_field('item');
+
+				endwhile;
+				endif;
+
+					if( have_rows('what_is_included') ): 
+					while ( have_rows('what_is_included') ) : the_row();
+					echo the_sub_field('item');
+
+					endwhile;
+					endif;
+			}
+
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+add_action( 'woocommerce_single_product_summary', 'exf_acfs_function', 45);

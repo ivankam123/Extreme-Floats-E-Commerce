@@ -13,17 +13,8 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'extreme-floats' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'extreme-floats' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'extreme-floats' ), 'extreme-floats', '<a href="https://extremefloats.bcitwebdeveloper.ca/">FWD29</a>' );
-				?>
+			<h3>THIS IS THE FOOTER</h3>
+			<p>Lucille, Ivan, Ryan</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

@@ -56,12 +56,12 @@ get_header();
 					while ($wc_query->have_posts()) :
 						$wc_query->the_post();
 						?>
-						<div class="single-tour-container">
+						<article class="single-tour-container">
 							<h3><?php the_title(); ?></h3>
 							<?php the_content(); ?>
 							<?php the_post_thumbnail(); ?>
 							<a href="<?php the_permalink(); ?>">See More</a>
-						</div>
+						</article>
 					<?php
 					endwhile;
 						wp_reset_postdata();

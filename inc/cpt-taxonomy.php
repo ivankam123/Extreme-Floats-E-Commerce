@@ -79,11 +79,6 @@
     }
     add_action( 'init', 'ef_register_custom_post_types' );
 
-    function ef_register_taxonomies() {
-        // NO TAXONOMIES
-
-    }
-    add_action( 'init', 'ef_register_taxonomies');
 
     function ef_rewrite_flush() {
         ef_register_custom_post_types();

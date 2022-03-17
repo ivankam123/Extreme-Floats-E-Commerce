@@ -21,13 +21,12 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
+			// get_template_part( 'template-parts/content', 'page' );
+echo'<section>';
+			echo'<h2>';
+			echo the_title();
+			echo'</h2>';
+			echo the_content();
 			if ( function_exists('get_field') ) {
 
 			if( get_field('address') ) {
@@ -48,7 +47,7 @@ get_header();
 				echo '</p>';
 				}
 		}
-
+echo'</section>';
 		endwhile; // End of the loop.
 		?>
 

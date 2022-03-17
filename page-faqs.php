@@ -23,14 +23,20 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'page' );
 
+if (function_exists('get_field')) {
+
 if( have_rows('faqs') ): 
     while ( have_rows('faqs') ) : the_row();
         $sub_question = get_sub_field('question');
 		$sub_answer = get_sub_field('answer');
-        echo '<p>' .$sub_question.'</p>';
+        echo'<article>';
+		echo '<p>' .$sub_question.'</p>';
 		echo '<p>' .$sub_answer.'</p>';
+		echo '</article>';
+
 endwhile;
 endif;
+}
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :

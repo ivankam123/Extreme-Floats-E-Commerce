@@ -18,9 +18,11 @@ get_header();
 	<main id="primary" class="site-main">
 
 		<?php
-		while ( have_posts() ) :
-			the_post();
+		while ( have_posts() ) : the_post(); ?>
 
+			<h1>Frequently Asked Questions</h1>
+
+			<?php
 			if (function_exists('get_field')) {
 				if( have_rows('faqs') ): 
 					while ( have_rows('faqs') ) : the_row();
@@ -33,7 +35,6 @@ get_header();
 					endwhile;
 				endif;
 			}
-
 
 		endwhile; // End of the loop.
 		?>

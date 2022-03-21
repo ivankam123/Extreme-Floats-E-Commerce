@@ -22,37 +22,37 @@ get_header();
 			the_post();
 
 			// get_template_part( 'template-parts/content', 'page' );
-echo'<section>';
-			echo'<h2>';
+		echo'<section>';
+			echo'<h1>';
 			echo the_title();
-			echo'</h2>';
+			echo'</h1>';
 			echo the_content();
 			if ( function_exists('get_field') ) {
+				echo '<div class="all-contact-info">';
+					if( get_field('address') ) {
+						echo '<p>';
+						the_field('address');
+						echo '</p>';
+					}
+				
+					if( get_field('email') ) {
+						echo '<p>';
+						the_field('email');
+						echo '</p>';
+					}
 
-			if( get_field('address') ) {
-				echo '<p>';
-				the_field('address');
-				echo '</p>';
+					if( get_field('phone_number') ) {
+						echo '<p>';
+						the_field('phone_number');
+						echo '</p>';
+					}
+				echo '</div>';
 			}
-		
-			if( get_field('email') ) {
-				echo '<p>';
-				the_field('email');
-				echo '</p>';
-				}
-
-			if( get_field('phone_number') ) {
-				echo '<p>';
-				the_field('phone_number');
-				echo '</p>';
-				}
-		}
-echo'</section>';
+		echo'</section>';
 		endwhile; // End of the loop.
 		?>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

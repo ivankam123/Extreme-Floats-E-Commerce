@@ -47,7 +47,7 @@ get_header();
 			<section class="products-container" id="products-container">
 				<h2>Tours</h2>
 				<?php $params = array(
-					'posts_per_page' => 4, //No of product to be fetched
+					'posts_per_page' => -1, //No of product to be fetched
 					'post_type' => 'product'
 				);
 

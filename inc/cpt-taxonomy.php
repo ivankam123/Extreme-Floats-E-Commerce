@@ -32,8 +32,6 @@
             'menu_position'      => 7,
             'menu_icon'          => 'dashicons-admin-tools',
             'supports'           => array( 'title', 'thumbnail'),
-            'template'           => array(),
-            'template_lock'      => 'all'
         );
 
         register_post_type( 'ef-staffs', $args );
@@ -82,7 +80,6 @@
 
     function ef_rewrite_flush() {
         ef_register_custom_post_types();
-        ef_register_taxonomies();
         flush_rewrite_rules();
     }
     add_action('after_switch_theme', 'ef_rewrite_flush');

@@ -230,65 +230,81 @@ function exf_acfs_function() {
 	
 				 if ( function_exists ( 'get_field' ) ) {
 
+					echo '<div class="info-container">';
+					
+					if ( get_field( 'minimum_age' ) ) {
+						echo '<section class="min-age-container">';
+							echo'<h2>Minimum Age</h2>';
+							echo "<p>";
+							the_field( 'minimum_age' );
+							echo "</p>";
+						echo '</section>';
+					}
+					if ( get_field( 'minimum_weight' ) ) {
+						echo '<section class="min-weight-container">';
+							echo'<h2>Minimum Weight</h2>';
+							echo "<p>";
+							the_field( 'minimum_weight' );
+							echo "</p>";
+						echo '</section>';
+					}
 					if ( get_field( 'google_map' ) ) {
-						echo'<h2>Directions</h2>';
-						echo "<p>";
-						the_field( 'google_map' );
-						echo "</p>";
+						echo '<section class="map-container">';
+							echo'<h2>Directions</h2>';
+							echo "<p>";
+							the_field( 'google_map' );
+							echo "</p>";
+						echo "</section>";
 					}
 					if ( get_field( 'tour_length' ) ) {
-					echo'<h3>Tour Length</h3>';
-						echo "<p>";
-						the_field( 'tour_length' );
-						echo "</p>";
+						echo '<section class="tour-length-container">';
+							echo'<h2>Tour Length</h2>';
+							echo "<p>";
+							the_field( 'tour_length' );
+							echo "</p>";
+						echo '</section>';
 					}
-					if ( get_field( 'minimum_age' ) ) {
-						echo'<h3>Minimum Age</h3>';
-						echo "<p>";
-						the_field( 'minimum_age' );
-						echo "</p>";
-					}
-
-					if ( get_field( 'minimum_weight' ) ) {
-						echo'<h3>Minimum Weight</h3>';
-						echo "<p>";
-						the_field( 'minimum_weight' );
-						echo "</p>";
-					}
-
 					if ( get_field( 'departure_time' ) ) {
-						echo'<h3>Departure Time</h3>';
-						echo "<p>";
-						the_field( 'departure_time' );
-						echo "</p>";
+						echo '<section class="departure-time-container">';
+							echo'<h2>Departure Time</h2>';
+							echo "<p>";
+							the_field( 'departure_time' );
+							echo "</p>";
+						echo '</section>';
 					}
 
 				}
-				echo'<div>';
+				
+				echo'<div class="two-col-container">';
 					if( have_rows('what_to_bring') ) {
-						echo'<h3>What To Bring</h3>';
-					echo '<ul>';
-					while ( have_rows('what_to_bring') ) : the_row();
-					echo '<li>' .the_sub_field('what-to-bring').'</li>';
+						echo '<section class="wtb-container">';
+							echo'<h2>What To Bring</h2>';
+							echo '<ul>';
+							while ( have_rows('what_to_bring') ) : the_row();
+							echo '<li>' .the_sub_field('what-to-bring').'</li>';
 
-				endwhile;
-				echo '</ul>';
-
-			}
+							endwhile;
+							echo '</ul>';
+						echo '</section>';
+					}
 
 					if( have_rows('whats_included') ) {
-						echo'<h3>Whats Included</h3>';
-					echo '<ul>';
-					while ( have_rows('whats_included') ) : the_row();
-					echo '<li>' .the_sub_field('whats_included').'</li>';
+						echo '<section class="whats-inc-container">';
+							echo'<h2>Whats Included</h2>';
+							echo '<ul>';
+							while ( have_rows('whats_included') ) : the_row();
+							echo '<li>' .the_sub_field('whats_included').'</li>';
 
-				endwhile;
-				echo '</ul>';
-
-			}
-			echo'</div>';
+							endwhile;
+							echo '</ul>';
+						echo '</section>';
+					}
+				echo'</div>';
 			}
 
 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 add_action( 'woocommerce_single_product_summary', 'exf_acfs_function', 45);
+
+// Remove Breadcrumbs
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);

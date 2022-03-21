@@ -17,59 +17,66 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			?>
-
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<section>
-				<header class="entry-header">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				</header><!-- .entry-header -->
+		<?php while ( have_posts() ) : the_post(); ?>
 
 				<div class="entry-content">
-				<?php 
-                        if ( function_exists ( 'get_field' ) ) {
-                    
-                            if ( get_field( 'about_the_team' ) ) {
-                                the_field( 'about_the_team' );
-                            }
+					<header class="about-header">
+						<h1><?php the_title(); ?></h1>
+						<?php the_post_thumbnail(); ?>
+					</header>
 
-                            if ( get_field( 'about_the_company' ) ) {
-                                the_field( 'about_the_company' );
-                            }
-                        } 
-				?>
+					<?php 
+						if ( function_exists ( 'get_field' ) ) {
+							if ( get_field( 'about_the_company' ) ) {
+								echo '<section class="our-company-container">';
+									echo '<h2>Our Company</h2>';
+									the_field( 'about_the_company' );
+								echo '</section>';
+							}
+						} 	
+
+						$args = array(
+							'post_type'      => 'ef-staffs',
+							'posts_per_page' => -1,
+						);
+						$query = new WP_Query( $args );
+
+						if ( $query -> have_posts() ){
+							echo '<h2>Meet Your Tour Guides</h2>';
+							while ( $query -> have_posts() ) {
+								$query -> the_post(); ?>
+								<article>
+									<?php the_post_thumbnail(); ?>
+									<h3><?php the_title(); ?></h3>
+									<?php 
+									if ( function_exists( 'get_field' ) ) {
+										if ( get_field( 'description' ) ) { 
+											echo '<p>';
+											the_field( 'description' );
+											echo '</p>';
+										}
+										if ( get_field( 'tour' ) ):
+											$tours = get_field('tour');
+											if ( $tours ):
+												foreach ( $tours as $tour ):
+													$permalink = get_permalink( $tour->ID );
+        											$title = get_the_title( $tour->ID ); ?>
+													<a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a>
+												<?php
+												endforeach;
+												wp_reset_postdata();
+											endif;
+										endif;
+									} 
+									?>
+								</article>
+								<?php
+							}
+							wp_reset_postdata();
+						} 
+					?>
 				</div>
-					</section>
-
-			<section>
-			<?php
-			$args = array(
-				'post_type'      => 'ef-staffs',
-				'posts_per_page' => -1,
-			);
-
-			$query = new WP_Query( $args );
-
-			$query = new WP_Query( $args );
-
-			if ( $query -> have_posts() ){
-				while ( $query -> have_posts() ) {
-					$query -> the_post();
-					if ( function_exists( 'get_field' ) ) {
-						if ( get_field( 'description' ) ) {
-							the_field( 'description' );
-						}
-					}
-				}
-				wp_reset_postdata();
-			} 
-			?>
-			<section>
-			</article>
+	
 	<?php
 
 		endwhile; // End of the loop.

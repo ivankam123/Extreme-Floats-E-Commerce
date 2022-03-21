@@ -185,3 +185,4 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 // cpt-taxonomy
 require get_template_directory() .'/inc/cpt-taxonomy.php';
+

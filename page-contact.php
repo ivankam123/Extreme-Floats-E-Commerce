@@ -24,9 +24,9 @@ get_header();
 			// get_template_part( 'template-parts/content', 'page' );
 		echo'<section>';
 			echo'<h1>';
-			echo the_title();
+			the_title();
 			echo'</h1>';
-			echo the_content();
+			the_content();
 			if ( function_exists('get_field') ) {
 				echo '<div class="all-contact-info">';
 					if( get_field('address') ) {

@@ -50,6 +50,8 @@ function extreme_floats_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'extreme-floats' ),
+			'socials' => esc_html__('Socials', 'extreme-floats'),
+			'cart' => esc_html__('Cart', 'extreme-floats'),
 		)
 	);
 

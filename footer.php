@@ -13,9 +13,66 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<h3>THIS IS THE FOOTER</h3>
+			<h4>LOGO</h4>
+			<p>&copy; 2022</p>
 			<p>Lucille, Ivan, Ryan</p>
+			<a href="<?php echo esc_attr( esc_url( get_privacy_policy_url() ) ); ?>">Privacy Policy</a>
 		</div><!-- .site-info -->
+		<nav class="site-map">
+			<h4>Site Map</h4>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				)
+			);
+			?>
+		</nav><!-- .site-map -->
+		<nav class="tours-footer">
+			<h4>Tours</h4>
+			<ul>
+				<?php 
+					$args = array(
+						'posts_per_page' => -1, //No of product to be fetched
+						'post_type' => 'product'
+					);
+					$query = new WP_Query($args); 
+					if ($query->have_posts()) : 
+						while ($query->have_posts()) :
+							$query->the_post(); ?>
+							<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+						<?php
+						endwhile;
+						wp_reset_postdata();
+					endif;
+				?>
+			</ul>
+		</nav><!-- .tours-footer -->
+		<nav class="socials-footer">
+			<h4>Socials</h4>
+		</nav><!-- .socials-footer -->
+		<section class="contact-footer">
+			<h4>Contact</h4>
+			<ul>
+				<?php 
+					if (get_field('email', 15)) : ?>
+						<li><a href="mailto:<?php the_field('email', 15); ?>"><?php the_field('email', 15); ?></a></li>
+					<?php	
+					endif;
+
+					if (get_field('address', 15)) : ?>
+						<li><address><?php the_field('address', 15); ?></address></li>
+					<?php	
+					endif;
+
+					if (get_field('phone_number', 15)) : ?>
+						<li><?php the_field('phone_number', 15); ?></li>
+					<?php	
+					endif;
+				?>
+			</ul>
+		</section><!-- .contact-footer -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

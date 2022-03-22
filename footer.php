@@ -21,12 +21,12 @@
 		<nav class="site-map">
 			<h4>Site Map</h4>
 			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					)
+				);
 			?>
 		</nav><!-- .site-map -->
 		<nav class="tours-footer">
@@ -51,6 +51,13 @@
 		</nav><!-- .tours-footer -->
 		<nav class="socials-footer">
 			<h4>Socials</h4>
+			<?php
+				wp_nav_menu(
+					array(
+						'menu' => 'socials',
+					)
+				);
+			?>
 		</nav><!-- .socials-footer -->
 		<section class="contact-footer">
 			<h4>Contact</h4>

@@ -61,7 +61,7 @@ get_header();
 												foreach ( $tours as $tour ):
 													$permalink = get_permalink( $tour->ID );
         											$title = get_the_title( $tour->ID ); ?>
-													<a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a>
+													<a href="<?php echo esc_url( $permalink ); ?>" class="primary"><?php echo esc_html( $title ); ?></a>
 												<?php
 												endforeach;
 												wp_reset_postdata();

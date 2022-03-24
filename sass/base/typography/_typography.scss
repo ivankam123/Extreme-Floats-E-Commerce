@@ -1,13 +1,27 @@
+@import "utilities/variables";
+
 body,
 button,
 input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
-	font-family: $font__main;
-	font-size: 1rem;
-	line-height: $font__line-height-body;
+  color: $color__text-main;
+  font-family: $font__main;
+  font-size: $step-0;
+  line-height: $font__line-height-body;
+}
+
+h1,
+h2 {
+  font-family: $font__head;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font__sub-head;
 }
 
 @import "headings";

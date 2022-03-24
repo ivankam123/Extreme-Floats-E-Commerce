@@ -22,26 +22,29 @@ get_header();
 			the_post();
 		?>
 			<section class="hero-container">
-				<?php the_post_thumbnail(); 
-			
-				 if ( function_exists ( 'get_field' ) ) {
-					 if ( get_field( 'big_hero_text' ) ) {
-						echo "<h1>";
-						the_field( 'big_hero_text' );
-						echo "</h1>";
+				<?php the_post_thumbnail(); ?>
+
+				<div class="content-container">
+					<?php
+					if ( function_exists ( 'get_field' ) ) {
+						if ( get_field( 'big_hero_text' ) ) {
+							echo "<h1>";
+							the_field( 'big_hero_text' );
+							echo "</h1>";
+						}
+						if ( get_field( 'intro-message' ) ) {
+							echo "<p>";
+							the_field( 'intro-message' );
+							echo "</p>";
+						}
+						if ( get_field( 'hero-cta' ) ) {
+							$link = get_field('hero-cta'); ?>
+							<a href="#products-container"><?php echo $link['title']; ?></a>
+							<?php
+						}
 					}
-					if ( get_field( 'intro-message' ) ) {
-						echo "<p>";
-						the_field( 'intro-message' );
-						echo "</p>";
-					}
-					if ( get_field( 'hero-cta' ) ) {
-						$link = get_field('hero-cta'); ?>
-						<a href="#products-container"><?php echo $link['title']; ?></a>
-						<?php
-					}
-				}
-				?>
+					?>
+				</div>
 			</section>
 			
 			<section class="products-container" id="products-container">
@@ -57,10 +60,10 @@ get_header();
 						$wc_query->the_post();
 						?>
 						<article class="single-tour-container">
+							<?php the_post_thumbnail(); ?>
 							<h3><?php the_title(); ?></h3>
 							<?php the_content(); ?>
-							<?php the_post_thumbnail(); ?>
-							<a href="<?php the_permalink(); ?>">See More</a>
+							<a href="<?php the_permalink(); ?>" class="primary">See More</a>
 						</article>
 					<?php
 					endwhile;

@@ -6,7 +6,8 @@ header.site-header {
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.521);
+  z-index: 10;
   .site-branding {
     img {
       display: block;

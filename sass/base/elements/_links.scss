@@ -1,22 +1,53 @@
+@import "utilities/variables";
+@import "utilities/functions";
+@import "utilities/mixins";
+
 a {
-	color: $color__link;
+  color: $color__link;
 
-	&:visited {
-		color: $color__link-visited;
-	}
+  &:visited {
+    color: $color__link-visited;
+  }
 
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__link-hover;
+  }
 
-	&:focus {
-		outline: thin dotted;
-	}
+  &:focus {
+    outline: thin dotted;
+  }
 
-	&:hover,
-	&:active {
-		outline: 0;
-	}
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+
+a.primary {
+  display: inline-block;
+  text-decoration: none;
+  padding: em(10) em(30);
+  background-color: $dark;
+  color: white;
+
+  &:visited {
+    color: $color__link-visited;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__link-hover;
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+
+  &:hover,
+  &:active {
+    outline: 0;
+  }
 }

@@ -1,1 +1,57 @@
+body.page-id-50 {
+  .hero-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    img {
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: em(600);
+      margin-inline: em(20);
+      background-color: rgba(255, 255, 255, 0.733);
+      z-index: 1;
+    }
+  }
 
+  .products-container {
+    h2 {
+      text-transform: uppercase;
+      font-size: $step-5;
+      text-align: center;
+    }
+    .single-tour-container {
+      padding: em(20) em(10);
+      &:first-of-type {
+        margin-top: 0;
+      }
+      &:nth-child(even) {
+        background-color: rgb(230, 230, 230);
+      }
+      margin-block: 10vw;
+      h3 {
+        text-align: center;
+      }
+      p {
+        max-width: em(500);
+      }
+      a {
+        display: block;
+        width: fit-content;
+        margin-inline: auto;
+      }
+    }
+  }
+
+  .two-columns {
+  }
+}

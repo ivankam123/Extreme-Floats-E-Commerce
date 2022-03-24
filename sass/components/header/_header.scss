@@ -1,0 +1,27 @@
+header.site-header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  .site-branding {
+    img {
+      display: block;
+      width: min(20vw, 7rem);
+    }
+  }
+  .cart-container {
+    display: none;
+  }
+  .menu-menu-1-container {
+    position: absolute;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+  }
+}

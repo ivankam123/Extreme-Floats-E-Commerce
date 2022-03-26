@@ -1,3 +1,7 @@
+footer p {
+  margin-bottom: 0;
+}
+
 footer h4 {
   margin-bottom: 0.25rem;
 }
@@ -5,6 +9,13 @@ footer h4 {
 .site-footer {
   text-align: center;
   background-color: $primary_md;
+}
+
+.all-footer-items {
+  @media (min-width: $desktop) {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+  }
 }
 
 footer ul li a {
@@ -24,4 +35,36 @@ footer address {
 
 .contact-footer {
   padding-bottom: 1.5rem;
+  @media (min-width: $desktop) {
+    grid-column-end: 6;
+    max-width: 22.375rem;
+  }
+}
+
+.socials-footer {
+  @media (min-width: $desktop) {
+    grid-column-end: 5;
+  }
+}
+
+.policy-and-names {
+  @media (min-width: $desktop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .privacy-policy {
+    @media (min-width: $desktop) {
+      font-size: $step--1;
+      grid-column-end: 3;
+      height: fit-content;
+      align-self: end;
+    }
+  }
+}
+.our-names {
+  @media (min-width: $desktop) {
+    font-size: $step--1;
+    grid-column-end: 4;
+  }
 }

@@ -12,6 +12,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+		<section class="all-footer-items">
 		<div class="site-info">
 			<h4>LOGO</h4>
 			<p>&copy; 2022</p>
@@ -80,9 +81,13 @@
 					?>
 				</ul>
 			</section><!-- .contact-footer -->
+			</section>
+			<div class="policy-and-names">
 				<a class="privacy-policy" href="<?php echo esc_attr( esc_url( get_privacy_policy_url() ) ); ?>">Privacy Policy</a>
-				<div>Lucille, Ivan, Ryan</div>
+					<div class="our-names"><p>Lucille Chesshire, Ivan Kam, Ryan Gabrinao</p></div>
+			<div>
 	</footer><!-- #colophon -->
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

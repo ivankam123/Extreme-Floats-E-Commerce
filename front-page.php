@@ -87,6 +87,7 @@ get_header();
 				</section>
 				<section class="whats-included-container">
 					<h2>Our Trips Include</h2>
+					<?php get_template_part('icons/oars-logo'); ?>
 					<?php if( have_rows('what-is-included') ): ?>
 						<ul>
 						<?php while ( have_rows('what-is-included') ) : the_row(); ?>

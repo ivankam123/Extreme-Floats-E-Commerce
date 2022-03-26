@@ -76,7 +76,10 @@ get_header();
 
 			<div class="two-columns">
 				<section class=" what-to-bring-container">
-					<h2>What To Bring</h2>
+					<div class="heading">
+						<h2>What To Bring</h2>
+						<?php get_template_part('icons/shirt-solid'); ?>
+					</div>
 					<?php if( have_rows('what-to-bring') ): ?>
 						<ul>
 						<?php while ( have_rows('what-to-bring') ) : the_row(); ?>
@@ -86,8 +89,10 @@ get_header();
 					<?php endif; ?>
 				</section>
 				<section class="whats-included-container">
-					<h2>Our Trips Include</h2>
-					<?php get_template_part('icons/oars-logo'); ?>
+					<div class="heading">
+						<h2>Our Trips Include</h2>
+						<?php get_template_part('icons/oars-logo'); ?>
+					</div>
 					<?php if( have_rows('what-is-included') ): ?>
 						<ul>
 						<?php while ( have_rows('what-is-included') ) : the_row(); ?>
@@ -109,6 +114,7 @@ get_header();
 			?>
 
 			<section class="testimonials-container">
+				<div class="border-block">
 				<?php
 					if($query -> have_posts()) {
 						while($query -> have_posts()) {
@@ -120,6 +126,7 @@ get_header();
 						wp_reset_postdata();
 					}
 				?>
+				</div>
 			</section>
 
 		<?php

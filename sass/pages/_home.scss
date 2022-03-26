@@ -50,6 +50,7 @@ body.page-id-50 {
       }
       p {
         max-width: em(500);
+        margin-inline: auto;
       }
       a {
         display: block;
@@ -61,12 +62,22 @@ body.page-id-50 {
 
   .two-columns {
     section {
-      //   min-height: em(250);
       padding: em(50) em(20);
       h2 {
         margin: 0px;
         text-transform: uppercase;
         text-align: center;
+      }
+    }
+
+    .heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: em(10);
+      margin-bottom: em(20);
+      svg {
+        max-width: em(30);
       }
     }
     .what-to-bring-container {
@@ -75,6 +86,27 @@ body.page-id-50 {
     .whats-included-container {
       background-color: $primary_dark;
       color: white;
+      svg {
+        fill: white;
+      }
+    }
+  }
+
+  .testimonials-container {
+    padding-inline: em(20);
+    .border-block {
+      border-block: 1px solid black;
+      max-width: em($desktop);
+      padding-block: min(8vw, em(100));
+      margin-inline: auto;
+      blockquote {
+        max-width: em(600);
+        margin-inline: auto;
+        cite {
+          display: inline-block;
+          margin-bottom: 1em;
+        }
+      }
     }
   }
 }

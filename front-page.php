@@ -39,7 +39,7 @@ get_header();
 						}
 						if ( get_field( 'hero-cta' ) ) {
 							$link = get_field('hero-cta'); ?>
-							<a href="#products-container"><?php echo $link['title']; ?></a>
+							<a href="#products-container" class="primary"><?php echo $link['title']; ?></a>
 							<?php
 						}
 					}
@@ -86,7 +86,7 @@ get_header();
 					<?php endif; ?>
 				</section>
 				<section class="whats-included-container">
-					<h2>What's Included</h2>
+					<h2>Our Trips Include</h2>
 					<?php if( have_rows('what-is-included') ): ?>
 						<ul>
 						<?php while ( have_rows('what-is-included') ) : the_row(); ?>

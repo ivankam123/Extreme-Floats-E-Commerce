@@ -1,4 +1,8 @@
 body.page-id-50 {
+  font-size: $step-0;
+  .site-main > *:not(.hero-container) {
+    margin-block: 5rem;
+  }
   .hero-container {
     position: relative;
     display: flex;
@@ -20,6 +24,9 @@ body.page-id-50 {
       margin-inline: em(20);
       background-color: rgba(255, 255, 255, 0.733);
       z-index: 1;
+      h1 {
+        font-size: $step-6;
+      }
     }
   }
 
@@ -34,8 +41,8 @@ body.page-id-50 {
       &:first-of-type {
         margin-top: 0;
       }
-      &:nth-child(even) {
-        background-color: rgb(230, 230, 230);
+      &:nth-child(odd) {
+        background-color: $primary_light;
       }
       margin-block: 10vw;
       h3 {
@@ -53,5 +60,21 @@ body.page-id-50 {
   }
 
   .two-columns {
+    section {
+      //   min-height: em(250);
+      padding: em(50) em(20);
+      h2 {
+        margin: 0px;
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+    .what-to-bring-container {
+      background-color: $primary_md;
+    }
+    .whats-included-container {
+      background-color: $primary_dark;
+      color: white;
+    }
   }
 }

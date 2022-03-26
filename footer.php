@@ -15,8 +15,8 @@
 		<div class="site-info">
 			<h4>LOGO</h4>
 			<p>&copy; 2022</p>
-			<p>Lucille, Ivan, Ryan</p>
 			<a href="<?php echo esc_attr( esc_url( get_privacy_policy_url() ) ); ?>">Privacy Policy</a>
+			<div>Lucille, Ivan, Ryan</div>
 		</div><!-- .site-info -->
 		<nav class="site-map">
 			<h4>Site Map</h4>
@@ -34,7 +34,7 @@
 			<ul>
 				<?php 
 					$args = array(
-						'posts_per_page' => -1, //No of product to be fetched
+						'posts_per_page' => -1,
 						'post_type' => 'product'
 					);
 					$query = new WP_Query($args); 

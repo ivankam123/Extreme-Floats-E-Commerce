@@ -1,3 +1,7 @@
+footer h4 {
+  margin-bottom: 0.25rem;
+}
+
 .site-footer {
   text-align: center;
   background-color: $primary_md;
@@ -5,4 +9,19 @@
 
 footer ul li a {
   text-decoration: none;
+}
+
+.footer-nav-container {
+  @media (min-width: $tablet) {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+footer address {
+  margin: 0;
+}
+
+.contact-footer {
+  padding-bottom: 1.5rem;
 }

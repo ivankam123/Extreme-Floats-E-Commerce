@@ -1,0 +1,42 @@
+#about {
+  margin-inline: 1rem;
+  @media (min-width: $tablet) {
+    margin-inline: 1.5rem;
+  }
+}
+
+#about h1,
+#about h2,
+#about h3 {
+  text-align: center;
+}
+
+#about h3 {
+  margin: 0;
+}
+
+#about img {
+  padding: 1rem;
+}
+
+#about article img {
+  border-radius: 50%;
+  object-fit: cover;
+  max-height: 300px;
+  max-width: 300px;
+  display: flex;
+  margin: 0 auto;
+}
+
+#about .primary {
+  margin: auto;
+  display: flex;
+  max-width: fit-content;
+}
+
+#about article {
+  padding-block: 1.2rem;
+  @media (min-width: $laptop) {
+    display: flex;
+  }
+}

@@ -19,7 +19,7 @@ get_header();
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-				<div class="entry-content">
+				<div class="entry-content" id="about">
 					<header class="about-header">
 						<h1><?php the_title(); ?></h1>
 						<?php the_post_thumbnail(); ?>
@@ -43,18 +43,23 @@ get_header();
 
 						if ( $query -> have_posts() ){
 							echo '<h2>Meet Your Tour Guides</h2>';
+							echo'<div class="tour-info">';
 							while ( $query -> have_posts() ) {
 								$query -> the_post(); ?>
 								<article>
+									<div class="tour-guide">
 									<?php the_post_thumbnail(); ?>
 									<h3><?php the_title(); ?></h3>
-									<?php 
+									</div>
+									<?php
+
 									if ( function_exists( 'get_field' ) ) {
 										if ( get_field( 'description' ) ) { 
-											echo '<p>';
+											echo '<p class="tour-descrip">';
 											the_field( 'description' );
 											echo '</p>';
 										}
+									echo'</div>';
 										if ( get_field( 'tour' ) ):
 											$tours = get_field('tour');
 											if ( $tours ):

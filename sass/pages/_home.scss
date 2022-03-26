@@ -38,13 +38,13 @@ body.page-id-50 {
     }
     .single-tour-container {
       padding: em(20) em(10);
+      margin-block: 10vw;
       &:first-of-type {
         margin-top: 0;
       }
       &:nth-child(odd) {
         background-color: $primary_light;
       }
-      margin-block: 10vw;
       h3 {
         text-align: center;
       }

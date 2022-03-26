@@ -61,9 +61,11 @@ get_header();
 						?>
 						<article class="single-tour-container">
 							<?php the_post_thumbnail(); ?>
-							<h3><?php the_title(); ?></h3>
-							<?php the_content(); ?>
-							<a href="<?php the_permalink(); ?>" class="primary">See More</a>
+							<div class="info-container">
+								<h3><?php the_title(); ?></h3>
+								<?php the_content(); ?>
+								<a href="<?php the_permalink(); ?>" class="primary">See More</a>
+							</div>
 						</article>
 					<?php
 					endwhile;

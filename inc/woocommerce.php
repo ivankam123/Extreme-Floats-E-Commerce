@@ -249,12 +249,16 @@ function exf_acfs_function() {
 						echo '</section>';
 					}
 					if ( get_field( 'google_map' ) ) {
+						$location = get_field('google_map');
+						if( $location ):
 						echo '<section class="map-container">';
 							echo'<h2>Directions</h2>';
-							echo "<p>";
-							the_field( 'google_map' );
-							echo "</p>";
+							echo "<div class='acf-map' data-zoom='16'>"; ?>
+							<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>;
+							<?php
+							echo "</div>";
 						echo "</section>";
+						endif;
 					}
 					if ( get_field( 'tour_length' ) ) {
 						echo '<section class="tour-length-container">';

@@ -206,8 +206,8 @@ function bbloomer_remove_zoom_lightbox_theme_support() {
     remove_theme_support( 'wc-product-gallery-lightbox' );
     remove_theme_support( 'wc-product-gallery-slider' );
 }
-add_action( 'wp', 'bbloomer_remove_zoom_lightbox_theme_support', 99 );
 
+add_action( 'wp', 'bbloomer_remove_zoom_lightbox_theme_support', 99 );
 
 // Google Map ACF
 function my_acf_google_map_api( $api){
@@ -215,4 +215,6 @@ function my_acf_google_map_api( $api){
 	return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+
 

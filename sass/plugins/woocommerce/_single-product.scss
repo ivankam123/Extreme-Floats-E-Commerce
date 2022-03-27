@@ -1,88 +1,183 @@
 .single-product {
+  div.product {
+    position: relative;
 
-	div.product {
-		position: relative;
+    .woocommerce-product-gallery {
+      position: relative;
+      float: left;
 
-		.woocommerce-product-gallery {
-			position: relative;
-			float: left;
+      .woocommerce-product-gallery__trigger {
+        position: absolute;
+        top: 2em;
+        right: 1em;
+        display: block;
+        z-index: 99;
+      }
 
-			.woocommerce-product-gallery__trigger {
-				position: absolute;
-				top: 2em;
-				right: 1em;
-				display: block;
-				z-index: 99;
-			}
+      .flex-viewport {
+        margin-bottom: 1em;
+      }
 
-			.flex-viewport {
-				margin-bottom: 1em;
-			}
+      .flex-control-thumbs {
+        margin: 0;
+        padding: 0;
 
-			.flex-control-thumbs {
-				margin: 0;
-				padding: 0;
+        li {
+          list-style: none;
+          cursor: pointer;
+          float: left;
 
-				li {
-					list-style: none;
-					cursor: pointer;
-					float: left;
+          img {
+            opacity: 0.5;
 
-					img {
-						opacity: 0.5;
+            &.flex-active {
+              opacity: 1;
+            }
+          }
 
-						&.flex-active {
-							opacity: 1;
-						}
-					}
+          &:hover {
+            img {
+              opacity: 1;
+            }
+          }
+        }
+      }
 
-					&:hover {
+      @for $i from 2 through 5 {
+        &.woocommerce-product-gallery--columns-#{$i} {
+          .flex-control-thumbs {
+            li {
+              @include column-width($i);
 
-						img {
-							opacity: 1;
-						}
-					}
-				}
-			}
+              &:nth-child(#{$i}n) {
+                margin-right: 0;
+              }
 
-			@for $i from 2 through 5 {
-
-				&.woocommerce-product-gallery--columns-#{$i} {
-
-					.flex-control-thumbs {
-
-						li {
-
-							@include column-width($i);
-
-							&:nth-child(#{$i}n) {
-								margin-right: 0;
-							}
-
-							&:nth-child(#{$i}n+1) {
-								clear: both;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+              &:nth-child(#{$i}n + 1) {
+                clear: both;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .stock {
+  &:empty::before {
+    display: none;
+  }
 
-	&:empty::before {
-		display: none;
-	}
+  &.in-stock {
+    color: $woocommerce__color-success;
+  }
 
-	&.in-stock {
-		color: $woocommerce__color-success;
-	}
-
-	&.out-of-stock {
-		color: $woocommerce__color-error;
-	}
+  &.out-of-stock {
+    color: $woocommerce__color-error;
+  }
 }
 
+.woocommerce-product-gallery__wrapper {
+  margin: 0;
+}
 
+.has-post-thumbnail {
+  margin: 0 1rem;
+  @media (min-width: $desktop) {
+    margin: 0 5rem;
+  }
+}
+
+.has-post-thumbnail h2 {
+  margin: 0;
+}
+
+.has-post-thumbnail p {
+  margin-top: 0.25rem;
+}
+
+#tab-title-description {
+  display: none;
+}
+// .woocommerce-notices-wrapper .woocommerce-message,
+// .woocommerce-info,
+// .woocommerce-error,
+// .woocommerce-noreviews,
+// p.no-comments {
+//   background-color: white;
+//   display: grid;
+//   margin: 0 1rem;
+// }
+
+.woocommerce-message .button.wc-forward {
+  justify-self: end;
+}
+
+.whats-inc-container,
+.wtb-container {
+  padding-bottom: 2rem;
+}
+
+// .wc-bookings-booking-form-button.single_add_to_cart_button.button.alt.disabled {
+//   position: absolute;
+//   bottom: 0;
+//   right: 2rem;
+// }
+
+// .single-product div.product {
+//   position: static;
+// }
+// .single-product div.product .woocommerce-product-gallery {
+//   position: static;
+// }
+
+.single-product div.product .woocommerce-product-gallery {
+  @media (min-width: $tablet) {
+    position: relative;
+    float: unset;
+    text-align: center;
+  }
+}
+.wp-post-image {
+  @media (min-width: $tablet) {
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+  }
+  @media (min-width: $desktop) {
+    width: 700px;
+    height: auto;
+  }
+}
+
+h1.product_title.entry-title {
+  @media (min-width: $tablet) {
+    text-align: center;
+  }
+}
+p.price {
+  @media (min-width: $tablet) {
+    text-align: center;
+  }
+}
+.wc-bookings-date-picker.wc-bookings-date-picker-booking.wc_bookings_field_start_date {
+  @media (min-width: $tablet) {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.summary.entry-summary {
+  @media (min-width: $tablet) {
+    display: grid;
+  }
+}
+
+.cart {
+  grid-area: 4;
+}
+
+// .wc-bookings-booking-form-button.single_add_to_cart_button.button.alt.disabled {
+//   position: absolute;
+// }

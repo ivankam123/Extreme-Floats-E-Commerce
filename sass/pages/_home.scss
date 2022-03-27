@@ -42,9 +42,6 @@ body.page-id-50 {
       &:first-of-type {
         margin-top: 0;
       }
-      &:nth-child(odd) {
-        background-color: $primary_light;
-      }
       h3 {
         text-align: center;
       }
@@ -56,6 +53,40 @@ body.page-id-50 {
         display: block;
         width: fit-content;
         margin-inline: auto;
+      }
+      @media (min-width: $laptop) {
+        position: relative;
+        max-width: 1400px;
+        margin-inline: auto;
+        img {
+          position: absolute;
+          z-index: -1;
+          width: min(70vw, 1000px);
+          right: 0;
+          opacity: 0.7;
+          top: 0;
+          display: block;
+          height: 100%;
+          object-fit: cover;
+        }
+        .info-container {
+          max-width: 600px;
+          background: rgba(224, 251, 252, 0.171);
+          backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(5px);
+          border-radius: 10px;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          padding: em(30) em(10);
+        }
+
+        &:nth-child(odd) {
+          img {
+            left: 0;
+          }
+          .info-container {
+            margin-left: auto;
+          }
+        }
       }
     }
   }

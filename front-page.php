@@ -66,6 +66,7 @@ get_header();
 								<?php the_content(); ?>
 								<a href="<?php the_permalink(); ?>" class="primary">See More</a>
 							</div>
+							
 						</article>
 					<?php
 					endwhile;

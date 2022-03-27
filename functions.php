@@ -200,4 +200,3 @@ function bbloomer_remove_zoom_lightbox_theme_support() {
     remove_theme_support( 'wc-product-gallery-slider' );
 }
 add_action( 'wp', 'bbloomer_remove_zoom_lightbox_theme_support', 99 );
-  

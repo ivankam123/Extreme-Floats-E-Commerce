@@ -22,33 +22,49 @@ get_header();
 			the_post();
 
 			// get_template_part( 'template-parts/content', 'page' );
-		echo'<section>';
-			echo'<h1>';
+		echo'<section class="contact-main">';
+			echo'<h1 class="contact-title">';
 			the_title();
 			echo'</h1>';
-			the_content();
+			echo'<div class="contact-content">';
+			echo '<div class="contact-form">';
+				the_content();
+			echo '</div>';
 			if ( function_exists('get_field') ) {
 				echo '<div class="all-contact-info">';
-					if( get_field('address') ) {
-						echo '<p>';
-						the_field('address');
-						echo '</p>';
-					}
-				
-					if( get_field('email') ) {
-						echo '<p>';
-						the_field('email');
-						echo '</p>';
-					}
+					
 
 					if( get_field('phone_number') ) {
 						echo '<p>';
 						the_field('phone_number');
 						echo '</p>';
 					}
+
+					if( get_field('email') ) {
+						echo '<p>';
+						the_field('email');
+						echo '</p>';
+					}
+
+					if( get_field('address') ) {
+						echo '<p>';
+						the_field('address');
+						echo '</p>';
+					}
 				echo '</div>';
 			}
+			echo'</div>';
+			?>
+			<div class="cta-faq-section">
+				<h2>Still have questions?</h2>
+				<a href="<?php echo esc_url(get_page_link(132));?>" class="primary">
+				<?php echo get_the_title(132) ?>
+				</a>
+			</div>
+			<?php
 		echo'</section>';
+
+		
 		endwhile; // End of the loop.
 		?>
 

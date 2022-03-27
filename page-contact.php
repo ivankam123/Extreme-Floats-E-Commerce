@@ -55,6 +55,14 @@ get_header();
 			}
 			echo'</div>';
 			?>
+			
+			<?php $location = get_field('location'); 
+			if( $location ): ?> 
+				<div class="acf-map" data-zoom="16"> 
+						<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div> 
+				</div>
+			<?php endif; ?>
+		
 			<div class="cta-faq-section">
 				<h2>Still have questions?</h2>
 				<a href="<?php echo esc_url(get_page_link(132));?>" class="primary">

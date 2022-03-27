@@ -200,4 +200,18 @@ function bbloomer_remove_zoom_lightbox_theme_support() {
     remove_theme_support( 'wc-product-gallery-slider' );
 }
 add_action( 'wp', 'bbloomer_remove_zoom_lightbox_theme_support', 99 );
-  
+
+
+// Google Map ACF
+function my_acf_google_map_api( $api){
+	$api['key'] = 'xxx';
+	return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+//Enqueue Google Map Js
+wp_enqueue_script('google-map', get_template_directory_uri() . '/js/googlemap.js', 
+array('jquery', 'google-map-api'), _S_VERSION, true);
+	wp_enqueue_script('google-map-api', 
+	"https://maps.googleapis.com/maps/api/js?key=AIzaSyDf_6yBAZez8S6x04eX_fZY254psuUL_Hw", 
+	array(), _S_VERSION, true);

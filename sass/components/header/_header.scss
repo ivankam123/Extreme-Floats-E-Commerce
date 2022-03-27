@@ -11,11 +11,14 @@ header.site-header {
   .site-branding {
     img {
       display: block;
-      width: min(20vw, 7rem);
+      width: min(20vw, 4rem);
     }
   }
   .cart-container {
     display: none;
+    @media (min-width: 600px) {
+      display: block;
+    }
   }
   .menu-menu-1-container {
     position: absolute;
@@ -45,11 +48,12 @@ header input[type="submit"] {
   min-height: 100%;
   background-color: white;
   color: white;
-  padding-top: 2rem;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   justify-content: flex-end;
   padding-right: 0.75rem;
+  gap: 1rem;
+  text-transform: uppercase;
 }
 
 header.site-header {
@@ -62,9 +66,39 @@ header.site-header {
   top: 0;
   background-color: white;
   z-index: 10;
+  @media (min-width: 600px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-height: 4rem;
+  }
 }
 
 .main-navigation {
   display: block;
   z-index: 100;
+}
+
+header.site-header .menu-menu-1-container {
+  @media (min-width: 600px) {
+    position: static;
+    transform: unset;
+  }
+}
+
+.menu-cart-container {
+  text-align: right;
+  padding-right: 1.5rem;
+}
+
+.site-branding {
+  @media (min-width: 600px) {
+    order: -1;
+  }
+}
+
+.main-navigation ul {
+  @media (min-width: 600px) {
+    gap: 3rem;
+    justify-content: center;
+  }
 }

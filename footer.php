@@ -14,7 +14,9 @@
 	<footer id="colophon" class="site-footer">
 		<section class="all-footer-items">
 		<div class="site-info">
-			<h4>LOGO</h4>
+		<div class="footer-logo">
+		<?php the_custom_logo(); ?>
+		</div>
 			<p>&copy; 2022</p>
 		</div><!-- .site-info -->
 		<div class="footer-nav-container">

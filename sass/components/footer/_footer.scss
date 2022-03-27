@@ -1,6 +1,6 @@
 footer p,
 footer li {
-  font-size: $step--1;
+  font-size: $step--2;
 }
 
 footer p {
@@ -25,17 +25,25 @@ footer h4 {
   @media (min-width: $desktop) {
     display: grid;
     grid-template-columns: 2fr 7fr;
+    padding: 0rem 5rem 1rem;
   }
 }
 
 footer ul li a {
   text-decoration: none;
+  color: black;
+  :hover {
+    color: #4169e1;
+  }
 }
 
 .footer-nav-container {
   @media (min-width: $tablet) {
     display: flex;
     justify-content: space-around;
+  }
+  @media (min-width: $laptop) {
+    
   }
 }
 
@@ -65,21 +73,50 @@ footer address {
 
   .privacy-policy {
     @media (min-width: $desktop) {
-      font-size: $step--1;
+      font-size: $step--2;
       grid-column-end: 3;
       height: fit-content;
       align-self: end;
+      display: none;
     }
   }
 }
 .our-names {
   @media (min-width: $desktop) {
-    font-size: $step--1;
+    font-size: $step--2;
     grid-column-end: 4;
+    p a{
+      text-decoration: none;
+    }
   }
 }
 
 .footer-logo {
   width: min(20vw, 4.5rem);
   margin: 0 auto;
+
+  a img {
+    @media (min-width: $desktop) {
+      margin-bottom: -1rem;
+    }
+  }
+}
+
+.site-info{
+  @media (min-width: $desktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  }
+}
+
+
+.privacy-policy-desktop {
+  display: none;
+  @media (min-width: $desktop) {
+    font-size: $step--2;
+    display: block;
+  }
 }

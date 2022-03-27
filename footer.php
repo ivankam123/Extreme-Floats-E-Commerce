@@ -18,6 +18,7 @@
 		<?php the_custom_logo(); ?>
 		</div>
 			<p>&copy; 2022</p>
+			<a class="privacy-policy-desktop" href="<?php echo esc_attr( esc_url( get_privacy_policy_url() ) ); ?>">Privacy Policy</a>
 		</div><!-- .site-info -->
 		<div class="footer-nav-container">
 			<nav class="site-map">
@@ -86,7 +87,7 @@
 			</section>
 			<div class="policy-and-names">
 				<a class="privacy-policy" href="<?php echo esc_attr( esc_url( get_privacy_policy_url() ) ); ?>">Privacy Policy</a>
-					<div class="our-names"><p>Lucille Chesshire, Ivan Kam, Ryan Gabrinao</p></div>
+					<div class="our-names"><p><a href="https://lucillechesshire.com/" target="_blank">Lucille Chesshire</a>, <a href="https://ivostudio.ca" target="_blank">Ivan Kam</a>, <a href="https://rgstudios.ca/" target="_blank">Ryan Gabrinao</a></p></div>
 			<div>
 	</footer><!-- #colophon -->
 

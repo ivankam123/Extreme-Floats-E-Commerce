@@ -191,5 +191,13 @@ require get_template_directory() .'/inc/cpt-taxonomy.php';
 // Disables WooCommerce Sidebar
 function disable_woo_commerce_sidebar() {
 	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10); 
+}add_action('init', 'disable_woo_commerce_sidebar');
+
+// Disable Zoom, Slider & Lightbox @ Single Product
+function bbloomer_remove_zoom_lightbox_theme_support() { 
+    remove_theme_support( 'wc-product-gallery-zoom' );
+    remove_theme_support( 'wc-product-gallery-lightbox' );
+    remove_theme_support( 'wc-product-gallery-slider' );
 }
-add_action('init', 'disable_woo_commerce_sidebar');
+add_action( 'wp', 'bbloomer_remove_zoom_lightbox_theme_support', 99 );
+  

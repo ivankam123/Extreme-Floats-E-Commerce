@@ -30,6 +30,7 @@ get_header();
 			echo '<div class="contact-form">';
 				the_content();
 			echo '</div>';
+			echo '<div class="contact-right-content">';
 			if ( function_exists('get_field') ) {
 				echo '<div class="all-contact-info">';
 					
@@ -53,15 +54,18 @@ get_header();
 					}
 				echo '</div>';
 			}
-			echo'</div>';
 			?>
-			
 			<?php $location = get_field('location'); 
 			if( $location ): ?> 
 				<div class="acf-map" data-zoom="16"> 
 						<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div> 
 				</div>
 			<?php endif; ?>
+			<?php echo '</div>' ?>
+			<?php
+			
+			echo'</div>';
+			?>
 		
 			<div class="cta-faq-section">
 				<h2>Still have questions?</h2>

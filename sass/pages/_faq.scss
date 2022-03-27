@@ -1,0 +1,56 @@
+.faq-main {
+    margin-top: 200px;
+    h1{
+        display: flex;
+        justify-content: center;
+    }
+    @media (max-width: $laptop){
+        .faq-questions{
+          
+            margin: 2rem 4rem;
+
+            .faq-question{
+                font-weight: bold;
+            }
+        }
+        .cta-check-out-tours{
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            a{
+                display: flex;
+                align-self: center;
+            }
+        }
+    }
+    @media (min-width: $laptop){
+        .faq-hero-img img{
+            height: 70vh;
+            width: 100%;
+        }
+
+        .faq-questions{
+
+            width: 70%;
+            margin: 0 auto;
+
+            .faq-question{
+                font-weight: bold;
+            }
+        }
+
+        .cta-check-out-tours{
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            a{
+                display: flex;
+                align-self: center;
+            }
+        }
+    }
+}

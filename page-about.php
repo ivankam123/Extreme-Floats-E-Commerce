@@ -48,32 +48,33 @@ get_header();
 								$query -> the_post(); ?>
 								<article>
 									<div class="tour-guide">
-									<?php the_post_thumbnail(); ?>
-									<h3><?php the_title(); ?></h3>
+										<?php the_post_thumbnail(); ?>
+										<h3><?php the_title(); ?></h3>
 									</div>
-									<?php
-
-									if ( function_exists( 'get_field' ) ) {
-										if ( get_field( 'description' ) ) { 
-											echo '<p class="tour-descrip">';
-											the_field( 'description' );
-											echo '</p>';
-										}
-									echo'</div>';
-										if ( get_field( 'tour' ) ):
-											$tours = get_field('tour');
-											if ( $tours ):
-												foreach ( $tours as $tour ):
-													$permalink = get_permalink( $tour->ID );
-        											$title = get_the_title( $tour->ID ); ?>
-													<a href="<?php echo esc_url( $permalink ); ?>" class="primary"><?php echo esc_html( $title ); ?></a>
-												<?php
-												endforeach;
-												wp_reset_postdata();
-											endif;
-										endif;
-									} 
-									?>
+										<div class="text-and-button">
+											<?php
+											if ( function_exists( 'get_field' ) ) {
+												if ( get_field( 'description' ) ) { 
+													echo '<p class="tour-descrip">';
+													the_field( 'description' );
+													echo '</p>';
+												}
+												if ( get_field( 'tour' ) ):
+													$tours = get_field('tour');
+													if ( $tours ):
+														foreach ( $tours as $tour ):
+															$permalink = get_permalink( $tour->ID );
+															$title = get_the_title( $tour->ID ); ?>
+															<a href="<?php echo esc_url( $permalink ); ?>" class="primary"><?php echo esc_html( $title ); ?></a>
+														<?php
+														endforeach;
+														wp_reset_postdata();
+													endif;
+												endif;
+											} 
+											?>
+										</div>
+									</div>
 								</article>
 								<?php
 							}

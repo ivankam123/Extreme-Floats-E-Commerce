@@ -139,15 +139,17 @@
     text-align: center;
   }
 }
-.wp-post-image {
-  @media (min-width: $tablet) {
-    width: 500px;
-    height: auto;
-    object-fit: cover;
-  }
-  @media (min-width: $desktop) {
-    width: 700px;
-    height: auto;
+.single-product {
+  .wp-post-image {
+    @media (min-width: $tablet) {
+      width: 500px;
+      height: auto;
+      object-fit: cover;
+    }
+    @media (min-width: $desktop) {
+      width: 700px;
+      height: auto;
+    }
   }
 }
 

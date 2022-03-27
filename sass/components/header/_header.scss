@@ -11,7 +11,7 @@ header.site-header {
   .site-branding {
     img {
       display: block;
-      width: min(20vw, 4rem);
+      width: min(20vw, 3rem);
     }
   }
   .cart-container {
@@ -46,7 +46,7 @@ header input[type="submit"] {
 .main-navigation.toggled ul {
   min-width: 100%;
   min-height: 100%;
-  background-color: white;
+  background-color: #f0f0f0;
   color: white;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -64,7 +64,14 @@ header.site-header {
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: white;
+  // background-color: #f0f0f0;
+  box-shadow: 0px 5px 10px 0px #aaa;
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  opacity: 0.85;
+
   z-index: 10;
   @media (min-width: 600px) {
     display: grid;

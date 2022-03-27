@@ -6,7 +6,7 @@ header.site-header {
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.521);
+  background-color: transparent;
   z-index: 10;
   .site-branding {
     img {
@@ -25,4 +25,29 @@ header.site-header {
     right: 0;
     transform: translateY(100%);
   }
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border: none;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  padding: 0.6em 1em 0.4em;
+  mix-blend-mode: difference;
+  z-index: 10000;
+}
+
+.main-navigation.toggled ul {
+  min-width: 100%;
+  min-height: 100%;
+  background-color: white;
+  color: white;
+  padding-top: 2rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-content: flex-end;
+  padding-right: 0.75rem;
 }

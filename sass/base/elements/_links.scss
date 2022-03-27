@@ -29,13 +29,13 @@ a.primary {
   color: white;
 
   &:visited {
-    color: $color__link-visited;
+    color: white;
   }
 
   &:hover,
   &:focus,
   &:active {
-    color: $color__link-hover;
+    color: black;
   }
 
   &:focus {
@@ -46,4 +46,8 @@ a.primary {
   &:active {
     outline: 0;
   }
+}
+
+header a:hover {
+  color: $secondary;
 }

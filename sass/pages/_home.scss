@@ -38,35 +38,77 @@ body.page-id-50 {
     }
     .single-tour-container {
       padding: em(20) em(10);
+      margin-block: 10vw;
       &:first-of-type {
         margin-top: 0;
       }
-      &:nth-child(odd) {
-        background-color: $primary_light;
-      }
-      margin-block: 10vw;
       h3 {
         text-align: center;
       }
       p {
         max-width: em(500);
+        margin-inline: auto;
       }
       a {
         display: block;
         width: fit-content;
         margin-inline: auto;
       }
+      @media (min-width: $laptop) {
+        position: relative;
+        max-width: 1400px;
+        margin-inline: auto;
+        img {
+          position: absolute;
+          z-index: -1;
+          width: min(70vw, 1000px);
+          right: 0;
+          opacity: 0.7;
+          top: 0;
+          display: block;
+          height: 100%;
+          object-fit: cover;
+        }
+        .info-container {
+          max-width: 600px;
+          background: rgba(224, 251, 252, 0.171);
+          backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(5px);
+          border-radius: 10px;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          padding: em(30) em(10);
+        }
+
+        &:nth-child(odd) {
+          img {
+            left: 0;
+          }
+          .info-container {
+            margin-left: auto;
+          }
+        }
+      }
     }
   }
 
   .two-columns {
     section {
-      //   min-height: em(250);
       padding: em(50) em(20);
       h2 {
         margin: 0px;
         text-transform: uppercase;
         text-align: center;
+      }
+    }
+
+    .heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: em(10);
+      margin-bottom: em(20);
+      svg {
+        max-width: em(30);
       }
     }
     .what-to-bring-container {
@@ -75,6 +117,27 @@ body.page-id-50 {
     .whats-included-container {
       background-color: $primary_dark;
       color: white;
+      svg {
+        fill: white;
+      }
+    }
+  }
+
+  .testimonials-container {
+    padding-inline: em(20);
+    .border-block {
+      border-block: 1px solid black;
+      max-width: em($desktop);
+      padding-block: min(8vw, em(100));
+      margin-inline: auto;
+      blockquote {
+        max-width: em(600);
+        margin-inline: auto;
+        cite {
+          display: inline-block;
+          margin-bottom: 1em;
+        }
+      }
     }
   }
 }

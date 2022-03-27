@@ -47,7 +47,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 					<div class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
 						<div class="product-remove">
-							<h2 class="product-remove">Remove</h2>
+							<!-- <h2 class="product-remove">Remove</h2> -->
 							<?php
 								echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									'woocommerce_cart_item_remove_link',
@@ -150,7 +150,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						</div>
 					<?php } ?>
 
-					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+					
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 

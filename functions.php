@@ -215,3 +215,9 @@ function my_acf_google_map_api( $api){
 	return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+// add_filter( 'woocommerce_add_to_cart_validation', 'bbloomer_only_one_in_cart', 9999, 2 );
+// function bbloomer_only_one_in_cart( $passed, $added_product_id ) {
+//    wc_empty_cart();
+//    return $passed;
+// }

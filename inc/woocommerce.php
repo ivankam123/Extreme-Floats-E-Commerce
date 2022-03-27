@@ -254,7 +254,7 @@ function exf_acfs_function() {
 						echo '<section class="map-container">';
 							echo'<h2>Directions</h2>';
 							echo "<div class='acf-map' data-zoom='16'>"; ?>
-							<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>;
+								<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>;
 							<?php
 							echo "</div>";
 						echo "</section>";

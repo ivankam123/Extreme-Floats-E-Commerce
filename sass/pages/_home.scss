@@ -1,5 +1,8 @@
 body.page-id-50 {
   font-size: $step-0;
+  main {
+    margin-top: 0;
+  }
   .site-main > *:not(.hero-container) {
     margin-block: 5rem;
   }

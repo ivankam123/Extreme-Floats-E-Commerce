@@ -27,6 +27,7 @@ a.primary {
   padding: em(10) em(30);
   background-color: $secondary;
   color: white;
+  border-radius: 10px;
 
   &:visited {
     color: white;
@@ -50,4 +51,8 @@ a.primary {
 
 header a:hover {
   color: $secondary;
+}
+
+footer a:visited {
+  color: black;
 }

@@ -32,8 +32,8 @@ footer h4 {
 footer ul li a {
   text-decoration: none;
   color: black;
-  :hover {
-    color: #4169e1;
+  &:hover {
+    color: $secondary;
   }
 }
 
@@ -43,7 +43,6 @@ footer ul li a {
     justify-content: space-around;
   }
   @media (min-width: $laptop) {
-    
   }
 }
 
@@ -85,7 +84,7 @@ footer address {
   @media (min-width: $desktop) {
     font-size: $step--2;
     grid-column-end: 4;
-    p a{
+    p a {
       text-decoration: none;
     }
   }
@@ -102,16 +101,14 @@ footer address {
   }
 }
 
-.site-info{
+.site-info {
   @media (min-width: $desktop) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
   }
 }
-
 
 .privacy-policy-desktop {
   display: none;

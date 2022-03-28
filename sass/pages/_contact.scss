@@ -3,12 +3,18 @@
   justify-content: center;
 }
 .contact-main {
-  margin-top: 200px;
   .contact-content {
-    background-color: lightgray;
+    background-color: #3d5a80;
+    border-radius: 20px;
+    box-shadow: 0px 7px 9px 1px grey;
 
     .sbi_follow_btn {
       display: none;
+    }
+
+    .all-contact-info p,
+    .contact-form p {
+      color: white;
     }
     // mobile to tablet view
     @media (max-width: $laptop) {
@@ -18,12 +24,16 @@
       .contact-form {
         p {
           margin-bottom: 0;
+          color: white;
         }
         textarea {
           height: 150px;
         }
         .wpcf7-text {
-          width: 50%;
+          width: 100%;
+          @media (min-width: $tablet) {
+            width: 50%;
+          }
         }
         .wpcf7-submit {
           display: flex;
@@ -82,6 +92,7 @@
         align-self: flex-end;
         p {
           margin: 1rem;
+          color: white;
         }
       }
       .contact-right-content {

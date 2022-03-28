@@ -232,77 +232,84 @@ function exf_acfs_function() {
 
 					echo '<div class="info-container">';
 					
-					if ( get_field( 'minimum_age' ) ) {
-						echo '<section class="min-age-container">';
-							echo'<h2>Minimum Age</h2>';
-							echo "<p>";
-							the_field( 'minimum_age' );
-							echo "</p>";
-						echo '</section>';
-					}
-					if ( get_field( 'minimum_weight' ) ) {
-						echo '<section class="min-weight-container">';
-							echo'<h2>Minimum Weight</h2>';
-							echo "<p>";
-							the_field( 'minimum_weight' );
-							echo "</p>";
-						echo '</section>';
-					}
-					if ( get_field( 'google_map' ) ) {
-						$location = get_field('google_map');
-						if( $location ):
-						echo '<section class="map-container">';
-							echo'<h2>Directions</h2>';
-							echo "<div class='acf-map' data-zoom='16'>"; ?>
-								<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>;
-							<?php
-							echo "</div>";
-						echo "</section>";
-						endif;
-					}
-					if ( get_field( 'tour_length' ) ) {
-						echo '<section class="tour-length-container">';
-							echo'<h2>Tour Length</h2>';
-							echo "<p>";
-							the_field( 'tour_length' );
-							echo "</p>";
-						echo '</section>';
-					}
-					if ( get_field( 'departure_time' ) ) {
-						echo '<section class="departure-time-container">';
-							echo'<h2>Departure Time</h2>';
-							echo "<p>";
-							the_field( 'departure_time' );
-							echo "</p>";
-						echo '</section>';
-					}
-				}
-				
-				echo'<div class="two-col-container">';
-					if( have_rows('what_to_bring') ) {
-						echo '<section class="wtb-container">';
-							echo'<h2>What To Bring</h2>';
-							echo '<ul>';
-							while ( have_rows('what_to_bring') ) : the_row();
-							echo '<li>' .the_sub_field('what-to-bring').'</li>';
+						if ( get_field( 'minimum_age' ) ) {
+							echo '<section class="min-age-container">';
+								echo'<h2>Minimum Age</h2>';
+								echo "<p>";
+								the_field( 'minimum_age' );
+								echo "</p>";
+							echo '</section>';
+						}
+						if ( get_field( 'minimum_weight' ) ) {
+							echo '<section class="min-weight-container">';
+								echo'<h2>Minimum Weight</h2>';
+								echo "<p>";
+								the_field( 'minimum_weight' );
+								echo "</p>";
+							echo '</section>';
+						}
+						if ( get_field( 'google_map' ) ) {
+							$location = get_field('google_map');
+							if( $location ):
+							echo '<section class="map-container">';
+								echo'<h2>Directions</h2>';
+								echo "<div class='acf-map' data-zoom='16'>"; ?>
+									<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>;
+								<?php
+								echo "</div>";
+							echo "</section>";
+							endif;
+						}
+						if ( get_field( 'tour_length' ) ) {
+							echo '<section class="tour-length-container">';
+								echo'<h2>Tour Length</h2>';
+								echo "<p>";
+								the_field( 'tour_length' );
+								echo "</p>";
+							echo '</section>';
+						}
+						if ( get_field( 'departure_time' ) ) {
+							echo '<section class="departure-time-container">';
+								echo'<h2>Departure Time</h2>';
+								echo "<p>";
+								the_field( 'departure_time' );
+								echo "</p>";
+							echo '</section>';
+							}
+						}
+					echo'</div>';
+					
+					echo'<div class="two-col-container">';
+							if( have_rows('what_to_bring') ) {
+								echo '<section class="what-to-bring-container">';
+									echo '<div class="heading">';
+										echo'<h2>What To Bring</h2>';
+										get_template_part('icons/shirt-solid');
+									echo '</div>';
+									echo '<ul>';
+									while ( have_rows('what_to_bring') ) : the_row();
+									echo '<li>' .the_sub_field('what-to-bring').'</li>';
 
-							endwhile;
-							echo '</ul>';
-						echo '</section>';
-					}
+									endwhile;
+									echo '</ul>';
+								echo '</section>';
+							}
 
-					if( have_rows('whats_included') ) {
-						echo '<section class="whats-inc-container">';
-							echo'<h2>Whats Included</h2>';
-							echo '<ul>';
-							while ( have_rows('whats_included') ) : the_row();
-							echo '<li>' .the_sub_field('whats_included').'</li>';
+							if( have_rows('whats_included') ) {
+								echo '<section class="whats-included-container">';
+									echo '<div class="heading">';
+										echo'<h2>Whats Included</h2>';
+										get_template_part('icons/oars-logo');
+									echo '</div>';
+									echo '<ul>';
+									while ( have_rows('whats_included') ) : the_row();
+									echo '<li>' .the_sub_field('whats_included').'</li>';
 
-							endwhile;
-							echo '</ul>';
-						echo '</section>';
-					}
-				echo'</div>';
+									endwhile;
+									echo '</ul>';
+								echo '</section>';
+							}
+						echo'</div>';
 
 				
 }

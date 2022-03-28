@@ -16,3 +16,50 @@
     }
   }
 }
+
+body.woocommerce-checkout {
+  article {
+    width: min(100% - 2rem, em(800));
+    margin-inline: auto;
+  }
+
+  label {
+    margin-right: 1rem;
+  }
+
+  #payment button {
+    display: inline-block;
+    text-decoration: none;
+    padding: em(10) em(30);
+    background-color: $secondary;
+    color: white;
+    border-radius: 10px;
+
+    &:visited {
+      color: $color__link-visited;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color__link-hover;
+    }
+
+    &:focus {
+      outline: thin dotted;
+    }
+
+    &:hover,
+    &:active {
+      outline: 0;
+    }
+  }
+
+  .checkout {
+    margin-bottom: 2rem;
+  }
+  .woocommerce-billing-fields {
+    background-color: $primary_light;
+    padding: 1rem 2rem;
+  }
+}

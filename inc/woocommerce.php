@@ -252,11 +252,11 @@ function exf_acfs_function() {
 							$location = get_field('google_map');
 							if( $location ):
 							echo '<section class="map-container">';
-								echo'<h2>Directions</h2>';
-								echo "<div class='acf-map' data-zoom='16'>"; ?>
+								echo'<h2>Directions</h2>';?>
+								<div class='acf-map' data-zoom='16'>; 
 									<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>;
+								<div>;
 								<?php
-								echo "</div>";
 							echo "</section>";
 							endif;
 						}
@@ -310,7 +310,7 @@ function exf_acfs_function() {
 								echo '</section>';
 							}
 						echo'</div>';
-						
+
 
 				
 }

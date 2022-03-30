@@ -19,6 +19,7 @@ footer h4 {
 .site-footer {
   text-align: center;
   background-color: $primary_md;
+  padding-block: 1.25rem;
 }
 
 .all-footer-items {
@@ -91,12 +92,15 @@ footer address {
 }
 
 .footer-logo {
-  width: min(20vw, 4.5rem);
   margin: 0 auto;
+  img {
+    width: min(10vw, 800px);
+    // margin-bottom: 1rem;
+  }
 
   a img {
     @media (min-width: $desktop) {
-      margin-bottom: -1rem;
+      // margin-bottom: -1rem;
     }
   }
 }

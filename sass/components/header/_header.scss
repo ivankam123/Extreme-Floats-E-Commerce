@@ -13,7 +13,7 @@ header.site-header {
   .site-branding {
     img {
       display: block;
-      width: min(20vw, 4rem);
+      width: min(20vw, 7rem);
     }
   }
   .cart-container {
@@ -74,7 +74,6 @@ header.site-header {
   @media (min-width: 600px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding-block: 1rem;
   }
 }
 

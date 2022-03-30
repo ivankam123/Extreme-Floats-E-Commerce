@@ -18,8 +18,9 @@ footer h4 {
 
 .site-footer {
   text-align: center;
-  background-color: $primary_md;
+  background-color: $dark;
   padding-block: 1.25rem;
+  color: white;
 }
 
 .all-footer-items {
@@ -32,7 +33,7 @@ footer h4 {
 
 footer ul li a {
   text-decoration: none;
-  color: black;
+  color: white;
   &:hover {
     color: $secondary;
   }
@@ -66,11 +67,8 @@ footer address {
 }
 
 .policy-and-names {
-  @media (min-width: $desktop) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
+  width: fit-content;
+  margin-inline: auto;
   .privacy-policy {
     @media (min-width: $desktop) {
       font-size: $step--2;
@@ -82,6 +80,9 @@ footer address {
   }
 }
 .our-names {
+  a {
+    color: white;
+  }
   @media (min-width: $desktop) {
     font-size: $step--2;
     grid-column-end: 4;

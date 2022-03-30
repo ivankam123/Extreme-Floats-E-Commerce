@@ -248,6 +248,22 @@ function exf_acfs_function() {
 				echo "</p>";
 			echo '</section>';
 		}
+		if ( get_field( 'tour_length' ) ) {
+			echo '<section class="tour-length-container">';
+			echo'<h2>Tour Length</h2>';
+			echo "<p>";
+			the_field( 'tour_length' );
+			echo "</p>";
+			echo '</section>';
+		}
+		if ( get_field( 'departure_time' ) ) {
+			echo '<section class="departure-time-container">';
+			echo'<h2>Departure Time</h2>';
+			echo "<p>";
+			the_field( 'departure_time' );
+			echo "</p>";
+			echo '</section>';
+		}
 		if ( get_field( 'google_map' ) ) {
 			$location = get_field('google_map');
 			if( $location ):
@@ -260,22 +276,6 @@ function exf_acfs_function() {
 			echo "</section>";
 			endif;
 		}
-		if ( get_field( 'tour_length' ) ) {
-			echo '<section class="tour-length-container">';
-				echo'<h2>Tour Length</h2>';
-				echo "<p>";
-				the_field( 'tour_length' );
-				echo "</p>";
-			echo '</section>';
-		}
-		if ( get_field( 'departure_time' ) ) {
-			echo '<section class="departure-time-container">';
-				echo'<h2>Departure Time</h2>';
-				echo "<p>";
-				the_field( 'departure_time' );
-				echo "</p>";
-			echo '</section>';
-			}
 		}
 	echo'</div>';
 
@@ -309,7 +309,13 @@ function exf_acfs_function() {
 				echo '</ul>';
 			echo '</section>';
 		}
-	echo'</div>';		
+	echo'</div>'; ?>	
+	
+	<section class="questions-container">
+		<h2>Questions?</h2>
+		<a href="<?php echo esc_url(get_page_link(132));?>" class="primary">FAQs</a>
+	</section>
+	<?php 
 }
 
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );

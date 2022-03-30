@@ -16,6 +16,7 @@
     .all-contact-info p,
     .contact-form p {
       color: white;
+      margin: 0;
     }
     // mobile to tablet view
     @media (max-width: $laptop) {
@@ -91,8 +92,9 @@
         flex-direction: column;
         align-items: flex-start;
         align-self: flex-end;
+        gap: 1rem;
         p {
-          margin: 1rem;
+          margin: 0;
           color: white;
         }
       }
@@ -127,4 +129,10 @@
       margin: 0 auto;
     }
   }
+}
+
+.wpcf7-form.init {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }

@@ -163,7 +163,6 @@ p.price {
 
 body.single-product {
   .two-col-container {
-    margin-bottom: 2rem;
     section {
       padding: em(50) em(20);
       color: white;
@@ -203,4 +202,14 @@ body.single-product {
       }
     }
   }
+
+  .acf-map {
+    height: 500px;
+  }
+}
+
+.questions-container {
+  margin-block: 5rem;
+  width: fit-content;
+  margin-inline: auto;
 }

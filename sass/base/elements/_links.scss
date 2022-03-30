@@ -36,11 +36,11 @@ a.primary {
   &:hover,
   &:focus,
   &:active {
-    color: black;
+    color: white;
   }
 
   &:focus {
-    outline: thin dotted;
+    outline: thin dotted $secondary;
   }
 
   &:hover,
@@ -54,5 +54,5 @@ header a:hover {
 }
 
 footer a:visited {
-  color: black;
+  color: white;
 }

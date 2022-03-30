@@ -12,13 +12,13 @@ footer p {
   }
 }
 
-footer h4 {
+footer h2 {
   margin-bottom: 0.25rem;
 }
 
 .site-footer {
   text-align: center;
-  background-color: $primary_md;
+  background-color: $dark;
 }
 
 .all-footer-items {
@@ -31,10 +31,13 @@ footer h4 {
 
 footer ul li a {
   text-decoration: none;
-  color: black;
+  color: white;
   &:hover {
     color: $secondary;
   }
+}
+footer li {
+  color: white;
 }
 
 .footer-nav-container {

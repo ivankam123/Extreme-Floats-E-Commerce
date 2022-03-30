@@ -22,7 +22,7 @@
 		</div><!-- .site-info -->
 		<div class="footer-nav-container">
 			<nav class="site-map">
-				<h4>Site Map</h4>
+				<h2>Site Map</h2>
 				<?php
 					wp_nav_menu(
 						array(
@@ -33,7 +33,7 @@
 				?>
 			</nav><!-- .site-map -->
 			<nav class="tours-footer">
-				<h4>Tours</h4>
+				<h2>Tours</h2>
 				<ul>
 					<?php 
 						$args = array(
@@ -53,7 +53,7 @@
 				</ul>
 			</nav><!-- .tours-footer -->
 			<nav class="socials-footer">
-				<h4>Socials</h4>
+				<h2>Socials</h2>
 				<?php
 					wp_nav_menu(
 						array(
@@ -64,7 +64,7 @@
 			</nav><!-- .socials-footer -->
 			</div>
 			<section class="contact-footer">
-				<h4>Contact</h4>
+				<h2>Contact</h2>
 				<ul>
 					<?php 
 						if (get_field('email', 15)) : ?>

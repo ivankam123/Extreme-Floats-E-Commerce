@@ -228,83 +228,94 @@ if ( ! function_exists( 'extreme_floats_woocommerce_header_cart' ) ) {
 
 function exf_acfs_function() {
 	
-				 if ( function_exists ( 'get_field' ) ) {
+	if ( function_exists ( 'get_field' ) ) {
 
-					echo '<div class="info-container">';
-					
-					if ( get_field( 'minimum_age' ) ) {
-						echo '<section class="min-age-container">';
-							echo'<h2>Minimum Age</h2>';
-							echo "<p>";
-							the_field( 'minimum_age' );
-							echo "</p>";
-						echo '</section>';
-					}
-					if ( get_field( 'minimum_weight' ) ) {
-						echo '<section class="min-weight-container">';
-							echo'<h2>Minimum Weight</h2>';
-							echo "<p>";
-							the_field( 'minimum_weight' );
-							echo "</p>";
-						echo '</section>';
-					}
-					if ( get_field( 'google_map' ) ) {
-						$location = get_field('google_map');
-						if( $location ):
-						echo '<section class="map-container">';
-							echo'<h2>Directions</h2>';
-							echo "<div class='acf-map' data-zoom='16'>"; ?>
-								<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>;
-							<?php
-							echo "</div>";
-						echo "</section>";
-						endif;
-					}
-					if ( get_field( 'tour_length' ) ) {
-						echo '<section class="tour-length-container">';
-							echo'<h2>Tour Length</h2>';
-							echo "<p>";
-							the_field( 'tour_length' );
-							echo "</p>";
-						echo '</section>';
-					}
-					if ( get_field( 'departure_time' ) ) {
-						echo '<section class="departure-time-container">';
-							echo'<h2>Departure Time</h2>';
-							echo "<p>";
-							the_field( 'departure_time' );
-							echo "</p>";
-						echo '</section>';
-					}
-				}
-				
-				echo'<div class="two-col-container">';
-					if( have_rows('what_to_bring') ) {
-						echo '<section class="wtb-container">';
-							echo'<h2>What To Bring</h2>';
-							echo '<ul>';
-							while ( have_rows('what_to_bring') ) : the_row();
-							echo '<li>' .the_sub_field('what-to-bring').'</li>';
+	echo '<div class="info-container">';
 
-							endwhile;
-							echo '</ul>';
-						echo '</section>';
-					}
+		if ( get_field( 'minimum_age' ) ) {
+			echo '<section class="min-age-container">';
+				echo'<h2>Minimum Age</h2>';
+				echo "<p>";
+				the_field( 'minimum_age' );
+				echo "</p>";
+			echo '</section>';
+		}
+		if ( get_field( 'minimum_weight' ) ) {
+			echo '<section class="min-weight-container">';
+				echo'<h2>Minimum Weight</h2>';
+				echo "<p>";
+				the_field( 'minimum_weight' );
+				echo "</p>";
+			echo '</section>';
+		}
+		if ( get_field( 'tour_length' ) ) {
+			echo '<section class="tour-length-container">';
+			echo'<h2>Tour Length</h2>';
+			echo "<p>";
+			the_field( 'tour_length' );
+			echo "</p>";
+			echo '</section>';
+		}
+		if ( get_field( 'departure_time' ) ) {
+			echo '<section class="departure-time-container">';
+			echo'<h2>Departure Time</h2>';
+			echo "<p>";
+			the_field( 'departure_time' );
+			echo "</p>";
+			echo '</section>';
+		}
+		if ( get_field( 'google_map' ) ) {
+			$location = get_field('google_map');
+			if( $location ):
+			echo '<section class="map-container">';
+				echo'<h2>Directions</h2>';?>
+				<div class='acf-map' data-zoom='16'>; 
+					<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>;
+				<div>;
+				<?php
+			echo "</section>";
+			endif;
+		}
+		}
+	echo'</div>';
 
-					if( have_rows('whats_included') ) {
-						echo '<section class="whats-inc-container">';
-							echo'<h2>Whats Included</h2>';
-							echo '<ul>';
-							while ( have_rows('whats_included') ) : the_row();
-							echo '<li>' .the_sub_field('whats_included').'</li>';
+	echo'<div class="two-col-container">';
+		if( have_rows('what_to_bring') ) {
+			echo '<section class="what-to-bring-container">';
+				echo '<div class="heading">';
+					echo'<h2>What To Bring</h2>';
+					get_template_part('icons/shirt-solid');
+				echo '</div>';
+				echo '<ul>';
+				while ( have_rows('what_to_bring') ) : the_row();
+				echo '<li>' .the_sub_field('what-to-bring').'</li>';
 
-							endwhile;
-							echo '</ul>';
-						echo '</section>';
-					}
-				echo'</div>';
+				endwhile;
+				echo '</ul>';
+			echo '</section>';
+		}
 
-				
+		if( have_rows('whats_included') ) {
+			echo '<section class="whats-included-container">';
+				echo '<div class="heading">';
+					echo'<h2>Whats Included</h2>';
+					get_template_part('icons/oars-logo');
+				echo '</div>';
+				echo '<ul>';
+				while ( have_rows('whats_included') ) : the_row();
+				echo '<li>' .the_sub_field('whats_included').'</li>';
+
+				endwhile;
+				echo '</ul>';
+			echo '</section>';
+		}
+	echo'</div>'; ?>	
+	
+	<section class="questions-container">
+		<h2>Questions?</h2>
+		<a href="<?php echo esc_url(get_page_link(132));?>" class="primary">FAQs</a>
+	</section>
+	<?php 
 }
 
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
@@ -316,7 +327,6 @@ function woo_remove_product_tabs( $tabs ) {
 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 add_action( 'woocommerce_single_product_summary', 'exf_acfs_function', 45);
-// remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_output_product_data_tabs', 42);

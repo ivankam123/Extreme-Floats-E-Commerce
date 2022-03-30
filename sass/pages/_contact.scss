@@ -3,8 +3,14 @@
   justify-content: center;
 }
 .contact-main {
+  padding-block: 3rem;
+
   .contact-content {
-    background-color: #3d5a80;
+    background: rgba(152, 193, 217, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
     border-radius: 20px;
     box-shadow: 0px 7px 9px 1px grey;
 
@@ -14,7 +20,8 @@
 
     .all-contact-info p,
     .contact-form p {
-      color: white;
+      color: #000;
+      margin: 0;
     }
     // mobile to tablet view
     @media (max-width: $laptop) {
@@ -24,7 +31,6 @@
       .contact-form {
         p {
           margin-bottom: 0;
-          color: white;
         }
         textarea {
           height: 150px;
@@ -90,9 +96,9 @@
         flex-direction: column;
         align-items: flex-start;
         align-self: flex-end;
+        gap: 1rem;
         p {
-          margin: 1rem;
-          color: white;
+          margin: 0;
         }
       }
       .contact-right-content {
@@ -125,5 +131,39 @@
       width: 50%;
       margin: 0 auto;
     }
+  }
+}
+
+.wpcf7-form.init {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-main .contact-content .contact-form .wpcf7-submit {
+  display: inline-block;
+  text-decoration: none;
+  padding: em(10) em(30);
+  background-color: $secondary;
+  color: white;
+  border-radius: 10px;
+
+  &:visited {
+    color: white;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: black;
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+
+  &:hover,
+  &:active {
+    outline: 0;
   }
 }

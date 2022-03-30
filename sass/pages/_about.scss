@@ -21,10 +21,6 @@
   margin: 0;
 }
 
-#about img {
-  padding: 1rem;
-}
-
 #about article img {
   border-radius: 50%;
   object-fit: cover;
@@ -56,5 +52,33 @@
     padding-block: 3rem;
     justify-content: space-around;
     align-items: center;
+  }
+}
+
+#about {
+  header {
+    position: relative;
+    min-height: 60vh;
+    padding-top: 2rem;
+
+    h1 {
+      position: absolute;
+      color: white;
+      margin: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: $step-6;
+      z-index: 2;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+    }
+
+    img {
+      display: block;
+      height: 60vh;
+      object-fit: cover;
+      filter: brightness(0.5);
+    }
   }
 }

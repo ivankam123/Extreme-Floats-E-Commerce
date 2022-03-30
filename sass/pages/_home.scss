@@ -99,6 +99,7 @@ body.page-id-50 {
   .two-columns {
     section {
       padding: em(50) em(20);
+      color: white;
       h2 {
         margin: 0px;
         text-transform: uppercase;
@@ -118,17 +119,14 @@ body.page-id-50 {
       margin-bottom: em(20);
       svg {
         max-width: em(30);
+        fill: $secondary;
       }
     }
     .what-to-bring-container {
-      background-color: $primary_md;
+      background-color: rgb(31, 31, 31);
     }
     .whats-included-container {
-      background-color: $primary_dark;
-      color: white;
-      svg {
-        fill: white;
-      }
+      background-color: $dark;
     }
 
     @media (min-width: $laptop) {

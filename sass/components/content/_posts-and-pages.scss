@@ -21,3 +21,10 @@
   clear: both;
   margin: 0 0 1.5em;
 }
+
+#post-165 {
+  width: min(100% - 2vw, 800px);
+  margin-inline: auto;
+  margin-block: 1;
+  padding-block: 2rem;
+}

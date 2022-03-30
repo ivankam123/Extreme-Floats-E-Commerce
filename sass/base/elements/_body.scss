@@ -1,7 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: $color__background-body; // Fallback for when there is no custom background color defined.
 }
 
 main {
-  margin-top: 6rem;
+  margin-top: 119px;
 }

@@ -86,8 +86,16 @@
 			</section><!-- .contact-footer -->
 			</section>
 			<div class="policy-and-names">
+				
 				<a class="privacy-policy" href="<?php echo esc_attr( esc_url( get_privacy_policy_url() ) ); ?>">Privacy Policy</a>
-					<div class="our-names"><p><a href="https://lucillechesshire.com/" target="_blank">Lucille Chesshire</a>, <a href="https://ivostudio.ca" target="_blank">Ivan Kam</a>, <a href="https://rgstudios.ca/" target="_blank">Ryan Gabrinao</a></p></div>
+					<div class="our-names">
+						<p>
+							<h4>Built by:</h4>
+							<a href="https://lucillechesshire.com/" target="_blank">Lucille Chesshire</a>, 
+							<a href="https://ivostudio.ca" target="_blank">Ivan Kam</a>, 
+							<a href="https://rgstudios.ca/" target="_blank">Ryan Gabrinao</a>
+						</p>
+					</div>
 			<div>
 	</footer><!-- #colophon -->
 

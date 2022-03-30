@@ -76,7 +76,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						</div>
 
 						<div class="product-name" data-title="<?php esc_attr_e( 'Tour', 'woocommerce' ); ?>">
-							<h2 class="product-name"><?php esc_html_e( 'Tour', 'woocommerce' ); ?></h2>
+							<!-- <h2 class="product-name"><?php esc_html_e( 'Tour', 'woocommerce' ); ?></h2> -->
 							<?php
 							if ( ! $product_permalink ) {
 								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
@@ -95,14 +95,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							}
 							?>
 						</div>
-
-						<div class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
-							<h2 class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></h2>
-							<?php
-								echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-							?>
-						</div>
-
+						
 						<div class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
 							<h2 class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></h2>
 							<?php
@@ -125,13 +118,15 @@ do_action( 'woocommerce_before_cart' ); ?>
 							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 							?>
 						</div>
-
-						<div class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
-							<h2 class="product-subtotal"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></h2>
+						<div class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
+							<h2 class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></h2>
 							<?php
-								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+								echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 							?>
 						</div>
+
+
+						
 					</div>
 					<?php
 				}

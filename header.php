@@ -46,6 +46,7 @@
 			<?php the_custom_logo(); ?>
 		</div><!-- .site-branding -->
 		<div class="cart-container">
+			<span class="screen-reader-text">Go To Cart</span>
 			<?php
 				wp_nav_menu(
 					array( 'theme_location' => 'cart', )

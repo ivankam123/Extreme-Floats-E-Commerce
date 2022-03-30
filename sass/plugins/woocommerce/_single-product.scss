@@ -213,3 +213,16 @@ body.single-product {
   width: fit-content;
   margin-inline: auto;
 }
+
+body.single-product .info-container {
+  display: grid;
+  margin-bottom: 4rem;
+  @media (min-width: $tablet) {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+
+    .map-container {
+      grid-column: span 2;
+    }
+  }
+}

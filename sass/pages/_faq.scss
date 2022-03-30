@@ -23,20 +23,20 @@
       }
     }
   }
+
+  .faq-questions {
+    width: min(100% - 2rem, 800px);
+    margin-inline: auto;
+
+    .faq-question {
+      font-weight: bold;
+    }
+  }
   @media (min-width: $laptop) {
     .faq-hero-img img {
       height: 70vh;
       width: 100%;
       object-fit: cover;
-    }
-
-    .faq-questions {
-      width: 70%;
-      margin: 0 auto;
-
-      .faq-question {
-        font-weight: bold;
-      }
     }
 
     .cta-check-out-tours {

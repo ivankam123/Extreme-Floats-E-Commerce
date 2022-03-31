@@ -13,7 +13,7 @@ header.site-header {
   .site-branding {
     img {
       display: block;
-      width: min(20vw, 7rem);
+      width: min(20vw, 4rem);
     }
   }
   .cart-container {
@@ -91,6 +91,11 @@ header.site-header .menu-menu-1-container {
 
 .menu-cart-container {
   text-align: right;
+  &:hover {
+    svg {
+      fill: $secondary;
+    }
+  }
   svg {
     fill: #fff;
   }

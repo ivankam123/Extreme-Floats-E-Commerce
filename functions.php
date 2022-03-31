@@ -227,3 +227,37 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 //    return $passed;
 // }
 
+function exf_register_blocks() {
+    // Check ACF Pro installed, activated, and version 5.8 or higher
+    if ( function_exists( 'acf_register_block_type' ) ) {
+        // Register an accordion block type
+        acf_register_block_type(
+            array(
+                'name'              => 'accordion',
+                'title'             => __( 'Accordion' ),
+                'description'       => __( 'A custom accordion block.' ),
+                'category'          => 'design',
+                'icon'              => 'editor-justify',
+                'mode'              => 'edit',
+                'keywords'          => array( 'accordion' ),
+                'render_template'   => plugin_dir_path( __FILE__ ) . 'accordion/accordion.php',
+                'enqueue_assets'    => function() {
+                    wp_enqueue_style( 'block-accordion-styles', plugins_url( 'accordion/accordion.css', __FILE__ ) );
+                    wp_enqueue_script( 'block-accordion-scripts', plugins_url( 'accordion/accordion.js', __FILE__ ), array( 'jquery' ), '20190608', true );
+                },
+                // 'post_types'        => array( 'post', 'page' ),
+                // 'align'             => '',
+                // 'align_text'        => '',
+                // 'align_content'     => '',
+                // 'supports'          => array(),
+                // 'example'           => array(),
+                // // These can be used instead of 'render_template' or 'enqueue_assets'
+                // 'enqueue_style'     => get_template_directory_uri() . '/blocks/accordion/accordion.css',
+                // 'enqueue_script'    => get_template_directory_uri() . '/blocks/accordion/accordion.js',
+                // 'render_callback'   => 'fwd_acf_block_render_callback',
+            )
+        );
+    }
+}
+add_action( 'acf/init', 'exf_register_blocks' );
+?>

@@ -23,8 +23,9 @@ get_header();
 			<section class="faq-main">
 			<!-- <h1>Frequently Asked Questions</h1> -->
 			<h1><?php the_title()?></h1>
-
+			
 			<?php
+			// the_content();
 			if (function_exists('get_field')) {
 				echo '<section class="faq-content">';
 				echo '<div class="faq-hero-img">';

@@ -90,7 +90,7 @@
 				<a class="privacy-policy" href="<?php echo esc_attr( esc_url( get_privacy_policy_url() ) ); ?>">Privacy Policy</a>
 					<div class="our-names">
 						<p>
-							<h4>Built by:</h4>
+							<h2>Built by:</h2>
 							<a href="https://lucillechesshire.com/" target="_blank" rel="noopener">Lucille Chesshire</a>, 
 							<a href="https://ivostudio.ca" target="_blank" rel="noopener">Ivan Kam</a>, 
 							<a href="https://rgstudios.ca/" target="_blank" rel="noopener">Ryan Gabrinao</a>

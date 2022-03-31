@@ -21,6 +21,7 @@ footer h2 {
   text-align: center;
   background-color: $dark;
   color: white;
+  padding-block: 1rem;
 }
 
 .all-footer-items {
@@ -72,6 +73,18 @@ footer address {
 .policy-and-names {
   width: fit-content;
   margin-inline: auto;
+
+  .privacy-policy {
+    color: white;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: $secondary;
+    }
+    &:focus {
+      outline: 1px solid $secondary;
+    }
+  }
   .privacy-policy {
     @media (min-width: $desktop) {
       font-size: $step--2;
@@ -85,6 +98,14 @@ footer address {
 .our-names {
   a {
     color: white;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: $secondary;
+    }
+    &:focus {
+      outline: 1px solid $secondary;
+    }
   }
   @media (min-width: $desktop) {
     font-size: $step--2;
@@ -139,4 +160,7 @@ footer ul li a {
     outline: 1px solid $secondary;
     color: $secondary;
   }
+}
+
+.site-footer .our-names {
 }

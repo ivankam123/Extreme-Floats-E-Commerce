@@ -14,11 +14,13 @@ footer p {
 
 footer h2 {
   margin-bottom: 0.25rem;
+  font-size: $step-1;
 }
 
 .site-footer {
   text-align: center;
   background-color: $dark;
+  color: white;
 }
 
 .all-footer-items {
@@ -121,5 +123,20 @@ footer address {
   @media (min-width: $desktop) {
     font-size: $step--2;
     display: block;
+  }
+}
+
+footer ul li a {
+  &:focus {
+    outline: 1px solid $secondary;
+    color: $secondary;
+  }
+}
+
+.privacy-policy-desktop {
+  color: white;
+  &:focus {
+    outline: 1px solid $secondary;
+    color: $secondary;
   }
 }

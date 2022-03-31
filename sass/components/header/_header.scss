@@ -89,8 +89,20 @@ header.site-header .menu-menu-1-container {
   }
 }
 
+.menu-cart-container,
+.menu-cart-container ul,
+.menu-cart-container li {
+  width: fit-content;
+}
+
 .menu-cart-container {
   text-align: right;
+  margin-left: auto;
+
+  &:focus {
+    outline: 1px solid $secondary;
+  }
+
   &:hover {
     svg {
       fill: $secondary;

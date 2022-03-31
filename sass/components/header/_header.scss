@@ -47,12 +47,14 @@ header input[type="submit"] {
 .main-navigation.toggled ul {
   display: flex;
   flex-direction: column;
-
   background-color: #252525d2;
   color: #fff;
   text-transform: uppercase;
   li {
     padding: 2rem 1rem;
+    &:hover {
+      background-color: $secondary;
+    }
   }
 }
 

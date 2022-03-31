@@ -58,8 +58,9 @@ get_header();
 				if ($wc_query->have_posts()) :
 					while ($wc_query->have_posts()) :
 						$wc_query->the_post();
+						$slug = get_post_field( 'post_name', get_the_ID() );
 						?>
-						<article class="single-tour-container">
+						<article class="single-tour-container <?php echo $slug; ?>">
 							<?php the_post_thumbnail(); ?>
 							<div class="info-container">
 								<h3><?php the_title(); ?></h3>

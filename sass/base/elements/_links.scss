@@ -28,6 +28,7 @@ a {
   background-color: $secondary;
   color: white;
   border-radius: 10px;
+  transition: all 0.5s;
 
   &:visited {
     color: white;
@@ -37,6 +38,7 @@ a {
   &:focus,
   &:active {
     color: white;
+    transform: scale(1.1);
   }
 
   &:focus {
@@ -55,4 +57,9 @@ header a:hover {
 
 footer a:visited {
   color: white;
+}
+
+a .primary:hover {
+  transform: scale(1.1);
+  transition: all 1s;
 }

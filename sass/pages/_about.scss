@@ -24,8 +24,8 @@
 #about article img {
   border-radius: 50%;
   object-fit: cover;
-  max-height: 300px;
-  max-width: 300px;
+  height: 300px;
+  width: 300px;
   display: flex;
   margin: 0 auto;
   @media (min-width: $desktop) {

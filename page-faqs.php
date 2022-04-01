@@ -22,14 +22,15 @@ get_header();
 
 			<section class="faq-main">
 			<!-- <h1>Frequently Asked Questions</h1> -->
-			<h1><?php the_title()?></h1>
+			
 			
 			<?php
 			// the_content();
 			if (function_exists('get_field')) {
 				echo '<section class="faq-content">';
-				echo '<div class="faq-hero-img">';
-					the_post_thumbnail();
+				echo '<div class="faq-hero-img">'; ?>
+				<h1><?php the_title()?></h1>
+				<?php the_post_thumbnail();
 				echo '</div>';
 				echo '<div class="faq-questions">';
 				if( have_rows('faqs') ): 
@@ -37,7 +38,7 @@ get_header();
 						$sub_question = get_sub_field('question');
 						$sub_answer = get_sub_field('answer');
 						echo'<article>';
-							echo '<p class="faq-question">' .$sub_question.'</p>';
+							echo '<h2 class="faq-question">' .$sub_question.'</h2>';
 							echo '<p class="faq-answer">' .$sub_answer.'</p>';
 						echo '</article>';
 					endwhile;

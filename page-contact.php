@@ -28,7 +28,7 @@ get_header();
 			echo'</h1>';
 			echo'<div class="contact-content">';
 			echo '<div class="contact-form">';
-				the_content();
+				echo do_shortcode('[contact-form-7 id="125" title="Contact form 1"]'); 
 			echo '</div>';
 			echo '<div class="contact-right-content">';
 			if ( function_exists('get_field') ) {
@@ -65,6 +65,8 @@ get_header();
 			<?php
 			
 			echo'</div>';
+
+			echo do_shortcode('[instagram-feed feed=1]'); 
 			?>
 		
 			<div class="cta-faq-section">

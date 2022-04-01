@@ -1,13 +1,19 @@
 #about {
-  margin-inline: 1rem;
-  @media (min-width: $tablet) {
-    margin-inline: 1.5rem;
+  .our-company-container {
+    margin-block: 7rem;
+    background-color: #add8e63d;
+    padding-block: 2rem;
+    h2 {
+      margin: 0;
+      margin-bottom: 2rem;
+    }
   }
 }
 
 #about p {
   padding-top: 1rem;
   text-align: center;
+  width: min(100% - 2vw, em(900));
   margin: 0 auto;
 }
 
@@ -47,9 +53,11 @@
 
 #about article {
   padding-block: 1.2rem;
+  width: min(100% - 2vw, 1200px);
+  margin: 0 auto;
   @media (min-width: $laptop) {
     display: flex;
-    padding-block: 3rem;
+    padding-block: 4rem;
     justify-content: space-around;
     align-items: center;
   }

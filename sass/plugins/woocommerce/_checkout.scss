@@ -67,3 +67,9 @@ body.woocommerce-checkout {
 input.input-text {
   width: 100%;
 }
+
+.woocommerce-checkout {
+  dd {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,11 @@
+body.woocommerce-order-received {
+  thead {
+    display: none;
+  }
+  tfoot {
+    text-align: left;
+  }
+  td.woocommerce-table__product-total {
+    display: none;
+  }
+}

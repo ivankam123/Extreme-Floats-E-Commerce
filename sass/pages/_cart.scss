@@ -12,6 +12,7 @@
   }
   p {
     margin: 0px;
+    background-color: transparent;
   }
 
   .product-name {
@@ -25,12 +26,16 @@
 
   .woocommerce {
     margin-bottom: 2rem;
+    div.woocommerce-notices-wrapper {
+      margin-bottom: 2rem;
+    }
     .woocommerce-cart-form__cart-item {
       background: rgba(152, 193, 217, 0.5);
       box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
       border-radius: 10px;
+      margin-bottom: 5rem;
       padding: 2vw;
       & > * {
         margin-block: 2rem;

@@ -231,6 +231,15 @@ function exf_acfs_function() {
 	if ( function_exists ( 'get_field' ) ) {
 
 	echo '<div class="info-container">';
+		
+		$terms = get_the_terms( get_the_ID(), 'product_cat' );
+		echo '<section class="rapid-classification-container">';
+			echo "<h2>Rapid Classification</h2>";
+				foreach ($terms as $term) {
+					echo '<p class="product-title entry-title">'.$term->name.'</p>';
+				}
+		echo '</section>';
+	
 
 		if ( get_field( 'minimum_age' ) ) {
 			echo '<section class="min-age-container">';
@@ -330,7 +339,7 @@ add_action( 'woocommerce_single_product_summary', 'exf_acfs_function', 45);
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_output_product_data_tabs', 42);
-
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
 
 

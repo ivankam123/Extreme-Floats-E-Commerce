@@ -221,9 +221,12 @@ function my_acf_google_map_api( $api){
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
-// add_filter( 'woocommerce_add_to_cart_validation', 'bbloomer_only_one_in_cart', 9999, 2 );
-// function bbloomer_only_one_in_cart( $passed, $added_product_id ) {
-//    wc_empty_cart();
-//    return $passed;
-// }
+function wporg_add_dashboard_widgets() {
+	wp_add_dashboard_widget('new_widget', 'Site Tutorial', 'new_widget_function');
+}
+add_action( 'wp_dashboard_setup', 'wporg_add_dashboard_widgets' );
 
+function new_widget_function() {
+	echo "<p>Site Content Tutorial</p>";
+	echo "<iframe width='380' height='280' src='https://www.youtube.com/embed/FGgtKUAcbFI' allowfullscreen></iframe>";
+}

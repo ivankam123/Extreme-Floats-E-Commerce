@@ -1,0 +1,15 @@
+body.error404 {
+  div#page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    main#primary {
+      flex-grow: 1;
+    }
+  }
+
+  section.error-404 {
+    width: min(100% - 2vw, em(1000));
+    margin: 0 auto;
+  }
+}

@@ -120,13 +120,6 @@ footer address {
   margin: 0 auto;
   img {
     width: min(10vw, 800px);
-    // margin-bottom: 1rem;
-  }
-
-  a img {
-    @media (min-width: $desktop) {
-      // margin-bottom: -1rem;
-    }
   }
 }
 

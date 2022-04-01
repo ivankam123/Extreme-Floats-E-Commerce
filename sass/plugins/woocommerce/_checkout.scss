@@ -72,4 +72,11 @@ input.input-text {
   dd {
     margin-left: 0;
   }
+
+  table.woocommerce-checkout-review-order-table {
+    thead,
+    td.product-total {
+      display: none;
+    }
+  }
 }

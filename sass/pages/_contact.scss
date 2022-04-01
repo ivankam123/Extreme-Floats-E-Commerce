@@ -13,6 +13,7 @@
     border-radius: 10px;
     border-radius: 20px;
     box-shadow: 0px 7px 9px 1px grey;
+    margin-bottom: 6rem;
 
     .sbi_follow_btn {
       display: none;
@@ -165,5 +166,17 @@
   &:hover,
   &:active {
     outline: 0;
+  }
+}
+
+div#sb_instagram {
+  .sb_instagram_header {
+    display: none;
+  }
+
+  #sb_images {
+    display: flex;
+    justify-content: center;
+    float: unset;
   }
 }
